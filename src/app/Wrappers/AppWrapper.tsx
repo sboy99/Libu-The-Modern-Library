@@ -6,7 +6,7 @@ type Props = {
 
 const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
   //
-  return <main className="relative">{children}</main>;
+  return <div className="relative">{children}</div>;
 };
 
 export default AppWrapper;
