@@ -2,11 +2,12 @@ import React from "react";
 import { utilities } from "../../utilities";
 import { NavLinks } from "../../data";
 import { NavLink, useLocation } from "react-router-dom";
-import ToggleTheme from "./ToggleTheme";
-import { BookOpenIcon } from "@heroicons/react/24/outline";
+import ToggleTheme from "./navbar/ToggleTheme";
+import { BookOpenIcon, StarIcon } from "@heroicons/react/24/outline";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
 import { HashLink } from "react-router-hash-link";
-import UserInfo from "./UserInfo";
+import UserInfo from "./navbar/UserInfo";
+import Searchbar from "./navbar/Searchbar";
 
 const { Component, Pop } = utilities;
 
@@ -42,7 +43,7 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <Component className="border-b border-slate-200 bg-base-light/90 dark:border-slate-600 dark:bg-base-dark/90">
+    <Component className="border-b border-slate-200 bg-slate-50 dark:border-slate-600 dark:bg-base-dark/90">
       <nav className="flex h-full min-h-[5rem] items-center justify-between">
         {/* logo */}
         <HashLink
@@ -52,9 +53,19 @@ const Navbar: React.FC = () => {
         >
           {Logo}
         </HashLink>
-        <div className="flex items-center justify-center divide-x-2 divide-slate-300 dark:divide-slate-500">
+        <div className="flex w-full items-center justify-center divide-x-2 divide-slate-300 dark:divide-slate-500">
           {/* links */}
-          {Links}
+          <div className="flex w-full items-center px-4">
+            <Searchbar />
+            <a
+              href="https://github.com/sboy99/Libu-The-Modern-Library"
+              target={`_blank`}
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 whitespace-nowrap rounded-full bg-cyan-500 px-4 py-2 font-medium text-white dark:bg-yellow-400 dark:text-slate-700"
+            >
+              <StarIcon className="h-6 w-6" /> Star Us
+            </a>
+          </div>
           {/* separator */}
           <div className="flex items-center gap-4 px-4">
             {/* theme */}

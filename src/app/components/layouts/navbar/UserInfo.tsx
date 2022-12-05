@@ -1,5 +1,5 @@
 import React from "react";
-import { utilities } from "../../utilities";
+import { utilities } from "../../../utilities";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 const { RoundedButtons } = utilities;

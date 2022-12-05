@@ -1,7 +1,7 @@
 import { SunIcon } from "@heroicons/react/24/outline";
 import { MoonIcon } from "@heroicons/react/24/solid";
-import { useTheme } from "../../store";
-import { Actions } from "../../store/features";
+import { useTheme } from "../../../store";
+import { Actions } from "../../../store/features";
 import { useDispatch } from "react-redux";
 
 const ToggleTheme: React.FC = (): JSX.Element => {
