@@ -3,17 +3,21 @@ import { Route, Routes } from "react-router-dom";
 import { pages, lazyPages } from "./app/pages";
 
 const { Layout } = pages;
-const { HomePage } = lazyPages;
+const { HomePage, AboutPage, BlogPage, BooksPage, ErrorPage } = lazyPages;
 
 const Loading = () => <div className="">Loading</div>;
 const App = () => {
   return (
-    <div className="App bg-base-light dark:bg-base-dark min-h-screen">
+    <div className="App min-h-screen bg-base-light dark:bg-base-dark">
       <React.Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
+            <Route path="/books" element={<BooksPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/blog" element={<BlogPage />} />
           </Route>
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </React.Suspense>
     </div>
