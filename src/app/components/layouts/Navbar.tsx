@@ -1,79 +1,63 @@
 import React from "react";
 import { utilities } from "../../utilities";
-import { NavLinks } from "../../data";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import ToggleTheme from "./navbar/ToggleTheme";
-import { BookOpenIcon, StarIcon } from "@heroicons/react/24/outline";
+import { StarIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
 import { HashLink } from "react-router-hash-link";
 import UserInfo from "./navbar/UserInfo";
 import Searchbar from "./navbar/Searchbar";
+import Logo from "./navbar/Logo";
 
 const { Component, Pop } = utilities;
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();
 
-  const Links: JSX.Element = (
-    <ul className="hidden items-center px-4 lg:flex">
-      {NavLinks.map((link, index) => (
-        <NavLink
-          to={link.to}
-          end
-          key={index}
-          className={({ isActive }) =>
-            `rounded-md px-3 py-1 font-semibold ${
-              isActive
-                ? `bg-cyan-200/20 text-cyan-500 dark:bg-high-dark/10 dark:text-yellow-400`
-                : `text-slate-500 hover:text-cyan-500 dark:text-slate-300 dark:hover:text-yellow-400`
-            }`
-          }
-        >
-          {link.title}
-        </NavLink>
-      ))}
-    </ul>
-  );
-
-  const Logo = (
-    <div className="flex items-center gap-x-2 font-inter text-2xl font-bold text-slate-700 dark:text-slate-200">
-      <BookOpenIcon className="h-8 w-8 text-cyan-500 dark:text-yellow-400" />{" "}
-      <span>LIBU</span>
-    </div>
+  const menu: JSX.Element = (
+    <button className="ml-2 rounded-full p-1 text-slate-700 outline-none transition-all duration-300 ease-in-out hover:bg-slate-200/50 dark:text-slate-200 dark:hover:bg-slate-600 lg:hidden">
+      <Bars3Icon className="h-7 w-7 sm:h-8 sm:w-8" />
+    </button>
   );
 
   return (
-    <Component className="border-b border-slate-200 bg-slate-50 dark:border-slate-600 dark:bg-base-dark/90">
-      <nav className="flex h-full min-h-[5rem] items-center justify-between">
-        {/* logo */}
+    <Component className="border-b border-slate-200 bg-slate-50 px-2 dark:border-slate-600 dark:bg-base-dark/90 sm:px-0">
+      <nav className="flex h-full min-h-16 items-center justify-between sm:min-h-[5rem]">
+        {/* logo on large screen */}
         <HashLink
           to={`${pathname}#top`}
           smooth
-          className="rounded-full px-4 py-1 transition-all duration-300 ease-in-out hover:bg-slate-200 dark:hover:bg-slate-600"
+          className="hidden rounded-full px-4 py-1 transition-all duration-300 ease-in-out hover:bg-slate-200 dark:hover:bg-slate-600 lg:block"
         >
-          {Logo}
+          <Logo />
         </HashLink>
+        {/* Menu btutton for medium screen */}
+        {menu}
         <div className="flex w-full items-center justify-center divide-x-2 divide-slate-300 dark:divide-slate-500">
-          {/* links */}
-          <div className="flex w-full items-center px-4">
-            <Searchbar />
+          <div className="flex w-full items-center justify-end px-2 sm:px-4">
+            {/* search bar */}
+            <div className="hidden w-full md:block">
+              <Searchbar />
+            </div>
+            {/* star us btn */}
             <a
               href="https://github.com/sboy99/Libu-The-Modern-Library"
               target={`_blank`}
               rel="noopener noreferrer"
-              className="flex items-center gap-1 whitespace-nowrap rounded-full bg-cyan-500 px-4 py-2 font-medium text-white dark:bg-yellow-400 dark:text-slate-700"
+              className="rounded-full bg-cyan-500 p-1 text-white dark:bg-yellow-400 dark:text-slate-700 sm:flex sm:items-center sm:gap-1 sm:whitespace-nowrap sm:px-4 sm:py-2 sm:font-medium"
             >
-              <StarIcon className="h-6 w-6" /> Star Us
+              <StarIcon className="h-5 w-5 sm:h-6 sm:w-6" />{" "}
+              <p className="hidden sm:block">Star Us</p>
             </a>
           </div>
           {/* separator */}
-          <div className="flex items-center gap-4 px-4">
+          <div className="flex items-center gap-2 px-2 sm:gap-4 sm:px-4">
             {/* theme */}
             {<ToggleTheme />}
             {/* additional links */}
             <Pop
               Icon={UserCircleIcon}
-              iconClass="w-9 h-9 text-slate-600 dark:text-slate-200"
+              iconClass="w-8 h-8 sm:w-9 sm:h-9 text-slate-600 dark:text-slate-200"
               className="flex items-center justify-center "
             >
               <div className="min-w-[18rem] rounded-lg bg-white p-4 dark:bg-slate-700">
