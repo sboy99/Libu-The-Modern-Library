@@ -66,20 +66,26 @@ const Searchbar: React.FC = (): JSX.Element => {
       <Combobox.Options
         className={`absolute inset-x-0 top-full mt-2  rounded-lg bg-white p-4 text-slate-700 dark:bg-slate-700 dark:text-slate-200 md:mt-4`}
       >
-        {filteredPeople.map((person) => (
-          <Combobox.Option key={person} value={person}>
-            {({ active }) => (
-              <div
-                className={`cursor-pointer py-2 px-4 ${
-                  active &&
-                  `rounded-md bg-cyan-500 font-semibold text-white dark:bg-yellow-400 dark:text-slate-700 `
-                }`}
-              >
-                {person}
-              </div>
-            )}
-          </Combobox.Option>
-        ))}
+        {filteredPeople.length > 0 ? (
+          filteredPeople.map((person) => (
+            <Combobox.Option key={person} value={person}>
+              {({ active }) => (
+                <div
+                  className={`cursor-pointer py-2 px-4 ${
+                    active &&
+                    `rounded-md bg-cyan-500 font-semibold text-white dark:bg-yellow-400 dark:text-slate-700 `
+                  }`}
+                >
+                  {person}
+                </div>
+              )}
+            </Combobox.Option>
+          ))
+        ) : (
+          <div className="flex w-full items-center justify-center font-medium capitalize text-slate-500 dark:text-slate-400">
+            No Options Matched
+          </div>
+        )}
       </Combobox.Options>
     </Combobox>
   );
