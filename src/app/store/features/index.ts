@@ -1,9 +1,15 @@
 import ApiSlice from "./ApiSlice";
 import ThemeSlice from "./ThemeSlice";
+import LayoutSlice from "./LayoutSlice";
 
 // Reducers
 const ApiReducer = ApiSlice.reducer;
 const ThemeReducer = ThemeSlice.reducer;
-export const Reducers = { ApiReducer, ThemeReducer };
+const LayoutReducer = LayoutSlice.reducer;
+export const Reducers = { ApiReducer, ThemeReducer, LayoutReducer };
 // Actions
-export const Actions = { ...ApiSlice.actions, ...ThemeSlice.actions };
+export const Actions = {
+  ...ApiSlice.actions,
+  ...ThemeSlice.actions,
+  ...LayoutSlice.actions,
+};

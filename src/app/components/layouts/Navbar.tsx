@@ -7,14 +7,18 @@ import { UserCircleIcon } from "@heroicons/react/24/solid";
 import { HashLink } from "react-router-hash-link";
 import UserInfo from "./navbar/UserInfo";
 import Searchbar from "./navbar/Searchbar";
+import Searchbutton from "./navbar/Searchbutton";
 import Logo from "./navbar/Logo";
+import { useTheme } from "../../store";
 
 const { Component, Pop } = utilities;
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();
+  const { windowWidth: width } = useTheme();
 
-  const menu: JSX.Element = (
+  const SearchBar: React.FC = width < 768 ? Searchbutton : Searchbar;
+  const Menu: JSX.Element = (
     <button className="ml-2 rounded-full p-1 text-slate-700 outline-none transition-all duration-300 ease-in-out hover:bg-slate-200/50 dark:text-slate-200 dark:hover:bg-slate-600 lg:hidden">
       <Bars3Icon className="h-7 w-7 sm:h-8 sm:w-8" />
     </button>
@@ -32,13 +36,11 @@ const Navbar: React.FC = () => {
           <Logo />
         </HashLink>
         {/* Menu btutton for medium screen */}
-        {menu}
+        {Menu}
         <div className="flex w-full items-center justify-center divide-x-2 divide-slate-300 dark:divide-slate-500">
           <div className="flex w-full items-center justify-end px-2 sm:px-4">
-            {/* search bar */}
-            <div className="hidden w-full md:block">
-              <Searchbar />
-            </div>
+            {/* search bar  */}
+            <SearchBar />
             {/* star us btn */}
             <a
               href="https://github.com/sboy99/Libu-The-Modern-Library"
