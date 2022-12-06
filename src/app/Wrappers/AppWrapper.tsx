@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "../store";
 
 type Props = {
   children: JSX.Element;
@@ -6,7 +7,8 @@ type Props = {
 
 const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
   //
-  return <div className="relative">{children}</div>;
+  const { darkMode } = useTheme();
+  return <div className={`relative ${darkMode && `dark`}`}>{children}</div>;
 };
 
 export default AppWrapper;
