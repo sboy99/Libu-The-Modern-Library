@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <Container className="border-b border-light-border bg-light-bg px-2 dark:border-dark-border dark:bg-dark-bg-deep sm:px-0">
+    <Container className="z-50 border-b border-light-border bg-light-bg px-2 dark:border-dark-border dark:bg-dark-bg-deep sm:px-0">
       <nav className="flex h-full min-h-16 items-center justify-between sm:min-h-[5rem]">
         {/* logo on large screen */}
         <HashLink
