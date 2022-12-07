@@ -6,7 +6,7 @@ import Searchbar from "./Searchbar";
 import { useDispatch } from "react-redux";
 import { Actions } from "../../../store/features";
 
-const { Component, RoundedButtons } = utilities;
+const { Container } = utilities;
 
 type Props = {};
 
@@ -29,12 +29,12 @@ const SearchBox: React.FC = (): JSX.Element | null => {
   );
 
   return isOpen && width < 768 ? (
-    <Component className="flex items-center justify-center border-b border-light-border bg-light-bg px-2 dark:border-dark-border dark:bg-dark-bg-deep">
+    <Container className="flex items-center justify-center border-b border-light-border bg-light-bg px-2 dark:border-dark-border dark:bg-dark-bg-deep">
       <div className="flex min-h-16 items-center justify-center gap-2 px-2">
         <Searchbar />
         {CloseSearch}
       </div>
-    </Component>
+    </Container>
   ) : null;
 };
 

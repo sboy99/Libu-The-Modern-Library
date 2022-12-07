@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "base-light": colors.slate[200],
+        "base-light": colors.slate[100],
         "base-dark": colors.slate[900],
 
         "light-bg": colors.white,
@@ -25,7 +25,7 @@ module.exports = {
         "light-bg-accent": colors.cyan[500],
         "dark-bg-accent": colors.yellow[400],
 
-        "light-text": colors.slate[800],
+        "light-text": colors.slate[700],
         "dark-text": colors.white,
         "light-text-p": colors.slate[500],
         "dark-text-p": colors.slate[300],
@@ -38,8 +38,8 @@ module.exports = {
         "light-border": colors.slate[200],
         "dark-border": colors.slate[700],
 
-        "light-devide": colors.slate[300],
-        "dark-devide": colors.slate[500],
+        "light-divide": colors.slate[300],
+        "dark-divide": colors.slate[500],
 
         "light-ring": colors.cyan[500],
         "dark-ring": colors.yellow[500],
@@ -47,7 +47,7 @@ module.exports = {
         cancle: colors.rose[600],
       },
       fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
         lexend: ["Lexend", ...defaultTheme.fontFamily.sans],
         mono: ["Fira Code VF", ...defaultTheme.fontFamily.mono],
         source: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
