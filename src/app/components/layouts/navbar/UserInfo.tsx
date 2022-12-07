@@ -13,13 +13,13 @@ const UserInfo: React.FC = (): JSX.Element => {
     <div className="flex flex-col gap-4">
       {/* user Avatar */}
       <div className="flex items-center justify-start">
-        <UserCircleIcon className="h-20 w-20 text-cyan-500 dark:text-yellow-400" />
+        <UserCircleIcon className="h-20 w-20 text-light-text-accent dark:text-dark-text-accent" />
       </div>
       {/* Greet */}
-      <h1 className="font-lexend text-2xl font-bold leading-7 tracking-tight text-slate-700 dark:text-white">
+      <h1 className="font-lexend text-2xl font-bold leading-7 tracking-tight text-light-text dark:text-dark-text">
         Sign up or log in to your Library account.
       </h1>
-      <p className="font-medium leading-6 text-slate-500 dark:text-slate-300">
+      <p className="font-medium leading-6 text-light-text-p dark:text-dark-text-p">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
         dolor sit amet consectetur.
       </p>
@@ -27,11 +27,11 @@ const UserInfo: React.FC = (): JSX.Element => {
       <div className="flex items-center justify-evenly">
         <RoundedButtons
           text="Sign Up"
-          className="bg-cyan-500 text-white dark:bg-yellow-400 dark:text-slate-800"
+          className="bg-light-bg-accent text-dark-text dark:bg-dark-bg-accent dark:text-light-text"
         />
         <RoundedButtons
           text="Log In"
-          className="border-2 border-cyan-500 text-cyan-500 dark:border-yellow-400 dark:text-yellow-400"
+          className="border-2 border-light-text-accent text-light-text-accent dark:border-dark-text-accent dark:text-dark-bg-accent"
         />
       </div>
     </div>
