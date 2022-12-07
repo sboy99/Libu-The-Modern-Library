@@ -21,3 +21,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-base: 39, 39, 42; /* zink-800 */
+    --color-text-muted: 82, 82, 91; /* zink-600 */
+    --color-text-inverted: 255, 255, 255; /* white */
+    --color-text-accent: 6, 182, 212;
+    --color-text-accent-hover: 14, 165, 233;
+
+    --color-fill: 255, 255, 255;
+    --color-fill-muted: 244, 244, 245; /* zink-100 */
+    --color-fill-inverted: 39, 39, 42; /* zink-800 */
+    --color-fill-accent: 6, 182, 212;
+    --color-fill-pop: 255, 255, 255;
+    --color-fill-bg: 244, 244, 245;
+
+    --color-button-accent: 6, 182, 212;
+    --color-button-accent-hover: 14, 165, 233;
+    --color-button-accent-muted: 8, 145, 178;
+
+    --color-button-classic: 39, 39, 42;
+    --color-button-classic-hover: 63, 63, 70;
+    --color-button-classic-muted: 24, 24, 27;
+
+    --color-border-base: 228, 228, 231;
+    --color-border-accent: 6, 182, 212;
+
+    --color-ring-base: 6, 182, 212;
+  }
+
+  .theme-dark {
+    --color-text-base: 255, 255, 255; /* zink-800 */
+    --color-text-muted: 226, 232, 240; /* zink-600 */
+    --color-text-inverted: 30, 41, 59; /* white */
+    --color-text-accent: 250, 204, 21; /*yellow-400 */
+    --color-text-accent-hover: 251, 191, 36; /*amber-400*/
+
+    --color-fill: 30, 41, 59;
+    --color-fill-muted: 51, 65, 85; /* slate-900 */
+    --color-fill-inverted: 241, 245, 249; /* slate-100 */
+    --color-fill-accent: 250, 204, 21;
+    --color-fill-pop: 51, 65, 85;
+    --color-fill-bg: 15, 23, 42;
+
+    --color-button-accent: 250, 204, 21;
+    --color-button-accent-hover: 250, 204, 21;
+    --color-button-accent-muted: 250, 204, 21;
+
+    --color-button-classic: 255, 255, 255;
+    --color-button-classic-hover: 241, 245, 249;
+    --color-button-classic-muted: 226, 232, 240;
+
+    --color-border-base: 71, 85, 105;
+    --color-border-accent: 250, 204, 21;
+
+    --color-ring-base: 250, 204, 21;
+  }
+}

@@ -19,8 +19,8 @@ const Searchbutton: React.FC = (): JSX.Element => {
   return (
     <button
       onClick={isOpen ? handleClose : handleOpenSearchbar}
-      className={`mx-2 rounded-full p-1 text-light-text dark:text-dark-text sm:mx-4 ${
-        isOpen && `border border-light-text dark:border-dark-text`
+      className={`mx-2 rounded-full p-1 text-skin-base sm:mx-4 ${
+        isOpen && `border border-skin-accent`
       }`}
     >
       {isOpen ? (

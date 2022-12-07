@@ -12,7 +12,7 @@ const SearchBox: React.FC = (): JSX.Element | null => {
   const { windowWidth: width } = useTheme();
 
   return isOpen && width < 768 ? (
-    <Container className="flex items-center justify-center border-b border-light-border bg-light-bg px-2 dark:border-dark-border dark:bg-dark-bg-deep">
+    <Container className="flex items-center justify-center border-b border-skin-base bg-skin-base px-2">
       <div className="flex min-h-16 items-center justify-center gap-2 px-2">
         <Searchbar />
         {/* {CloseSearch} */}

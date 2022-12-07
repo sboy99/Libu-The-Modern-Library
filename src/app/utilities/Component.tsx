@@ -11,7 +11,7 @@ const Component: React.FC<ComponentProps> = ({
 }): JSX.Element => {
   return (
     <div
-      className={` rounded-md border border-light-border bg-light-bg p-4 text-light-text dark:border-dark-border dark:bg-dark-bg-deep dark:text-dark-text ${className}`}
+      className={` rounded-md border border-skin-base bg-skin-base p-4 text-skin-base ${className}`}
     >
       {children}
     </div>
