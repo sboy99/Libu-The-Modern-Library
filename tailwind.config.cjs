@@ -1,5 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 const svgToDataUri = require("mini-svg-data-uri");
@@ -7,6 +5,16 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
+const withOpacity =
+  (variable) =>
+  ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variable}),${opacityValue})`;
+    }
+    return `rgb(var(${variable}))`;
+  };
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
@@ -45,6 +53,40 @@ module.exports = {
         "dark-ring": colors.yellow[500],
 
         cancle: colors.rose[600],
+      },
+      textColor: {
+        skin: {
+          base: withOpacity("--color-text-base"),
+          muted: withOpacity("--color-text-muted"),
+          inverted: withOpacity("--color-text-inverted"),
+          accent: withOpacity("--color-text-accent"),
+        },
+      },
+      backgroundColor: {
+        skin: {
+          fill: withOpacity("--color-fill"),
+          muted: withOpacity("--color-fill-muted"),
+          inverted: withOpacity("--color-fill-inverted"),
+          accent: withOpacity("--color-fill-accent"),
+        },
+        btn: {
+          accent: withOpacity("--color-button-accent"),
+          "accent-hover": withOpacity("--color-button-accent-hover"),
+          "accent-muted": withOpacity("--color-button-accent-muted"),
+          classic: withOpacity("--color-button-classic"),
+          "classic-hover": withOpacity("--color-button-classic-hover"),
+          "classic-muted": withOpacity("--color-button-classic-muted"),
+        },
+      },
+      borderColor: {
+        skin: {
+          base: withOpacity("--color-border-base"),
+        },
+      },
+      ringColor: {
+        skin: {
+          base: withOpacity("--color-ring-base"),
+        },
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
