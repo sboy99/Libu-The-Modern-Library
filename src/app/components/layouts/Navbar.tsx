@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
               iconClass="w-8 h-8 sm:w-9 sm:h-9 text-light-text dark:text-dark-text"
               className="flex items-center justify-center "
             >
-              <div className="min-w-[18rem] rounded-lg bg-light-bg p-4 dark:bg-dark-bg">
+              <div className="min-w-[18rem] rounded-lg bg-light-bg p-4 shadow-md dark:bg-dark-bg">
                 <UserInfo />
               </div>
             </Pop>

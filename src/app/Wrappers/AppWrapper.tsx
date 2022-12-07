@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useTheme } from "../store";
+import { useLayout, useTheme } from "../store";
 import { Actions } from "../store/features";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
-  const { darkMode } = useTheme();
+  const { darkMode, windowWidth } = useTheme();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,6 +18,12 @@ const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    if (windowWidth >= 1024) {
+      dispatch(Actions.closeSearchBar());
+    }
+  }, [windowWidth]);
 
   return <div className={`relative ${darkMode && `dark`}`}>{children}</div>;
 };

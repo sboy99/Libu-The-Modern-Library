@@ -64,7 +64,7 @@ const Searchbar: React.FC = (): JSX.Element => {
         </div>
       </div>
       <Combobox.Options
-        className={`absolute inset-x-0 top-full mt-2  rounded-lg bg-light-bg p-4 text-light-text dark:bg-dark-bg dark:text-dark-text md:mt-4`}
+        className={`absolute inset-x-0 top-full mt-2 rounded-lg  bg-light-bg p-4 text-light-text shadow-md dark:bg-dark-bg dark:text-dark-text md:mt-4`}
       >
         {filteredPeople.length > 0 ? (
           filteredPeople.map((person) => (
