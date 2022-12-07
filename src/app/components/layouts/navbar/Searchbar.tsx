@@ -49,22 +49,22 @@ const Searchbar: React.FC = (): JSX.Element => {
     >
       <div className="relative">
         {/* Magnifying Glass */}
-        <div className="pointer-events-none absolute inset-2 pl-2 text-slate-700 dark:text-slate-100">
+        <div className="pointer-events-none absolute inset-2 pl-2 text-light-text dark:text-dark-text">
           <MagnifyingGlassIcon className="h-6 w-6" />
         </div>
         <Combobox.Input
           ref={focus}
           placeholder="Search books"
-          className={`w-full rounded-full border-none bg-slate-200/50 px-4 py-2 pl-12 text-slate-700 placeholder:text-slate-500 focus:ring-slate-50 dark:bg-slate-700 dark:text-slate-200 placeholder:dark:text-slate-400 dark:focus:ring-slate-500/50`}
+          className={`w-full rounded-full border-none bg-light-bg-deep px-4 py-2 pl-12 text-light-text placeholder:text-placeholder-light focus:ring-light-ring dark:bg-dark-bg dark:text-dark-text dark:placeholder:text-placeholder-dark  dark:focus:ring-dark-ring`}
           onChange={(event) => setQuery(event.target.value)}
         />
         {/* Key suggesion */}
-        <div className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full bg-slate-700 px-3 py-0.5 font-medium text-slate-200 dark:bg-slate-200 dark:text-slate-700 sm:block">
+        <div className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full bg-dark-bg px-3 py-0.5 font-medium text-light-bg-deep dark:bg-light-bg-deep dark:text-dark-bg-deep sm:block">
           ctrl + /
         </div>
       </div>
       <Combobox.Options
-        className={`absolute inset-x-0 top-full mt-2  rounded-lg bg-white p-4 text-slate-700 dark:bg-slate-700 dark:text-slate-200 md:mt-4`}
+        className={`absolute inset-x-0 top-full mt-2  rounded-lg bg-light-bg p-4 text-light-text dark:bg-dark-bg dark:text-dark-text md:mt-4`}
       >
         {filteredPeople.length > 0 ? (
           filteredPeople.map((person) => (
@@ -73,7 +73,7 @@ const Searchbar: React.FC = (): JSX.Element => {
                 <div
                   className={`cursor-pointer py-2 px-4 ${
                     active &&
-                    `rounded-md bg-cyan-500 font-semibold text-white dark:bg-yellow-400 dark:text-slate-700 `
+                    `rounded-md bg-light-bg-accent font-semibold text-dark-text dark:bg-dark-bg-accent dark:text-light-text `
                   }`}
                 >
                   {person}
@@ -82,7 +82,7 @@ const Searchbar: React.FC = (): JSX.Element => {
             </Combobox.Option>
           ))
         ) : (
-          <div className="flex w-full items-center justify-center font-medium capitalize text-slate-500 dark:text-slate-400">
+          <div className="flex w-full items-center justify-center font-medium capitalize text-placeholder-light dark:text-placeholder-dark ">
             No Options Matched
           </div>
         )}

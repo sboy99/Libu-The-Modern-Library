@@ -21,7 +21,7 @@ const SearchBox: React.FC = (): JSX.Element | null => {
 
   const CloseSearch: JSX.Element = (
     <button
-      className="rounded-full bg-rose-600 p-1 text-white outline-none"
+      className="rounded-full bg-cancle p-1 text-dark-text outline-none"
       onClick={handleClose}
     >
       <XMarkIcon className="pointer-events-none h-5 w-5 sm:h-6 sm:w-6" />
@@ -29,7 +29,7 @@ const SearchBox: React.FC = (): JSX.Element | null => {
   );
 
   return isOpen && width < 768 ? (
-    <Component className="flex items-center justify-center border-b border-slate-200 bg-slate-50 px-2 dark:border-slate-600 dark:bg-slate-800">
+    <Component className="flex items-center justify-center border-b border-light-border bg-light-bg px-2 dark:border-dark-border dark:bg-dark-bg-deep">
       <div className="flex min-h-16 items-center justify-center gap-2 px-2">
         <Searchbar />
         {CloseSearch}

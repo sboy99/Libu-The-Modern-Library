@@ -19,25 +19,25 @@ const Navbar: React.FC = () => {
 
   const SearchBar: React.FC = width < 768 ? Searchbutton : Searchbar;
   const Menu: JSX.Element = (
-    <button className="ml-2 rounded-full p-1 text-slate-700 outline-none transition-all duration-300 ease-in-out hover:bg-slate-200/50 dark:text-slate-200 dark:hover:bg-slate-600 lg:hidden">
+    <button className="ml-2 rounded-full p-1 text-light-text outline-none transition-all duration-300 ease-in-out hover:bg-light-bg-hover dark:text-dark-text dark:hover:bg-dark-bg-hover lg:hidden">
       <Bars3Icon className="h-7 w-7 sm:h-8 sm:w-8" />
     </button>
   );
 
   return (
-    <Component className="border-b border-slate-200 bg-slate-50 px-2 dark:border-slate-600 dark:bg-base-dark/90 sm:px-0">
+    <Component className="border-b border-light-border bg-light-bg px-2 dark:border-dark-border dark:bg-dark-bg-deep sm:px-0">
       <nav className="flex h-full min-h-16 items-center justify-between sm:min-h-[5rem]">
         {/* logo on large screen */}
         <HashLink
           to={`${pathname}#top`}
           smooth
-          className="hidden rounded-full px-4 py-1 transition-all duration-300 ease-in-out hover:bg-slate-200 dark:hover:bg-slate-600 lg:block"
+          className="hidden rounded-full px-4 py-1 transition-all duration-300 ease-in-out hover:bg-light-bg-hover dark:hover:bg-dark-bg-hover lg:block"
         >
           <Logo />
         </HashLink>
         {/* Menu btutton for medium screen */}
         {Menu}
-        <div className="flex w-full items-center justify-center divide-x-2 divide-slate-300 dark:divide-slate-500">
+        <div className="flex w-full items-center justify-center divide-x-2 divide-light-devide dark:divide-dark-devide">
           <div className="flex w-full items-center justify-end px-2 sm:px-4">
             {/* search bar  */}
             <SearchBar />
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
               href="https://github.com/sboy99/Libu-The-Modern-Library"
               target={`_blank`}
               rel="noopener noreferrer"
-              className="rounded-full bg-cyan-500 p-1 text-white dark:bg-yellow-400 dark:text-slate-700 sm:flex sm:items-center sm:gap-1 sm:whitespace-nowrap sm:px-4 sm:py-2 sm:font-medium"
+              className="rounded-full bg-light-bg-accent p-1 text-dark-text dark:bg-dark-bg-accent dark:text-light-text sm:flex sm:items-center sm:gap-1 sm:whitespace-nowrap sm:px-4 sm:py-2 sm:font-medium"
             >
               <StarIcon className="h-5 w-5 sm:h-6 sm:w-6" />{" "}
               <p className="hidden sm:block">Star Us</p>
@@ -59,10 +59,10 @@ const Navbar: React.FC = () => {
             {/* additional links */}
             <Pop
               Icon={UserCircleIcon}
-              iconClass="w-8 h-8 sm:w-9 sm:h-9 text-slate-600 dark:text-slate-200"
+              iconClass="w-8 h-8 sm:w-9 sm:h-9 text-light-text dark:text-dark-text"
               className="flex items-center justify-center "
             >
-              <div className="min-w-[18rem] rounded-lg bg-white p-4 dark:bg-slate-700">
+              <div className="min-w-[18rem] rounded-lg bg-light-bg p-4 dark:bg-dark-bg">
                 <UserInfo />
               </div>
             </Pop>
