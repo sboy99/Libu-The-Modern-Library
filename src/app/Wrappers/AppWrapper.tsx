@@ -25,7 +25,9 @@ const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
     }
   }, [windowWidth]);
 
-  return <div className={`relative ${darkMode && `dark`}`}>{children}</div>;
+  return (
+    <div className={`relative ${darkMode && `theme-dark`}`}>{children}</div>
+  );
 };
 
 export default AppWrapper;

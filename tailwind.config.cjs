@@ -66,9 +66,11 @@ module.exports = {
       backgroundColor: {
         skin: {
           base: withOpacity("--color-fill"),
+          deep: withOpacity("--color-fill-bg"),
           muted: withOpacity("--color-fill-muted"),
           inverted: withOpacity("--color-fill-inverted"),
           accent: withOpacity("--color-fill-accent"),
+          pop: withOpacity("--color-fill-pop"),
         },
         btn: {
           accent: withOpacity("--color-button-accent"),

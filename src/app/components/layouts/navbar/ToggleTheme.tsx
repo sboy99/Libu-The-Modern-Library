@@ -24,10 +24,10 @@ const ToggleTheme: React.FC = (): JSX.Element => {
       className="peer relative inline-flex cursor-pointer items-center"
     >
       <div
-        className={`relative h-4 w-11 rounded-full border-white bg-slate-200 dark:border-gray-600 dark:bg-slate-600 sm:h-5 sm:w-12`}
+        className={`relative h-4 w-11 rounded-full border-skin-base bg-skin-muted sm:h-5 sm:w-12`}
       >
         <span
-          className={`absolute top-1/2 left-0 -translate-y-1/2 rounded-full border border-gray-300 bg-white p-1 transition-all sm:-left-1 ${
+          className={`absolute top-1/2 left-0 -translate-y-1/2 rounded-full border border-skin-accent bg-skin-base p-1 transition-all sm:-left-1 ${
             darkMode && `!translate-x-5 sm:!translate-x-7`
           } `}
         >

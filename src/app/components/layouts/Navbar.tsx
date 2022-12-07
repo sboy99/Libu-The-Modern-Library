@@ -59,10 +59,10 @@ const Navbar: React.FC = () => {
             {/* additional links */}
             <Pop
               Icon={UserCircleIcon}
-              iconClass="w-8 h-8 sm:w-9 sm:h-9 text-skin-muted"
+              iconClass="w-8 h-8 sm:w-9 sm:h-9 text-skin-base group-hover:text-skin-inverted"
               className="flex items-center justify-center "
             >
-              <div className="min-w-[18rem] rounded-lg bg-skin-base p-4 shadow-md ">
+              <div className="min-w-[18rem] rounded-lg bg-skin-pop p-4 shadow-md ">
                 <UserInfo />
               </div>
             </Pop>

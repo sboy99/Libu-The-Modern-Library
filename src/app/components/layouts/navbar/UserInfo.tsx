@@ -10,7 +10,7 @@ const UserInfo: React.FC = (): JSX.Element => {
   if (userLoggedIn) return <div className="">UserLoggedIn</div>;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 py-2 px-1">
       {/* user Avatar */}
       <div className="flex items-center justify-start">
         <UserCircleIcon className="h-20 w-20 text-skin-accent" />
