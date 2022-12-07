@@ -60,11 +60,12 @@ module.exports = {
           muted: withOpacity("--color-text-muted"),
           inverted: withOpacity("--color-text-inverted"),
           accent: withOpacity("--color-text-accent"),
+          "accent-hover": withOpacity("--color-text-accent-hover"),
         },
       },
       backgroundColor: {
         skin: {
-          fill: withOpacity("--color-fill"),
+          base: withOpacity("--color-fill"),
           muted: withOpacity("--color-fill-muted"),
           inverted: withOpacity("--color-fill-inverted"),
           accent: withOpacity("--color-fill-accent"),
@@ -81,6 +82,7 @@ module.exports = {
       borderColor: {
         skin: {
           base: withOpacity("--color-border-base"),
+          accent: withOpacity("--color-border-accent"),
         },
       },
       ringColor: {

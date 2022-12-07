@@ -13,8 +13,8 @@ const Links = (): JSX.Element => {
           className={({ isActive }) =>
             `flex items-center gap-x-4 py-1.5 pl-6 text-lg font-semibold tracking-tight ${
               isActive
-                ? `border-r-2 border-light-text-accent text-light-text-accent dark:border-dark-text-accent dark:text-dark-text-accent`
-                : `text-light-text hover:bg-light-bg-hover dark:text-dark-text dark:hover:bg-dark-bg-hover`
+                ? `border-r-2 border-skin-accent text-skin-accent `
+                : `text-skin-base hover:text-skin-accent-hover`
             }`
           }
         >
