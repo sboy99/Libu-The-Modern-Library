@@ -8,7 +8,7 @@ const { HomePage, AboutPage, BlogPage, BooksPage, ErrorPage } = lazyPages;
 const Loading = () => <div className="">Loading</div>;
 const App = () => {
   return (
-    <div className="App min-h-screen bg-base-light dark:bg-base-dark">
+    <div className="App min-h-screen bg-skin-muted">
       <React.Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Layout />}>
