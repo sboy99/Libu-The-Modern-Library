@@ -13,7 +13,7 @@ const Layout: React.FC = (): JSX.Element => {
   const { windowWidth } = useTheme();
   return (
     <div className="flex flex-col">
-      <div className="">
+      <div className="z-10">
         <Navbar />
         <SearchBox />
       </div>
