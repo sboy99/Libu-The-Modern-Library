@@ -3,7 +3,7 @@ import Links from "./menu/Links";
 
 const Menu: React.FC = (): JSX.Element => {
   return (
-    <menu className="max-h-96 min-h-64 min-w-[16rem] overflow-y-auto rounded-md border border-skin-base bg-skin-base">
+    <menu className="max-h-96 min-h-64 min-w-[12rem] overflow-y-auto rounded-md border border-skin-base bg-skin-base xl:min-w-[16rem]">
       <div className="py-4">
         <Links />
       </div>

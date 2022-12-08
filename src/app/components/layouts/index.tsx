@@ -21,11 +21,11 @@ const Layout: React.FC = (): JSX.Element => {
       <Container>
         <div className="flex items-start pt-4">
           {windowWidth >= 1024 && (
-            <aside className="sticky top-4 h-fit px-4">
+            <aside className="sticky top-4 h-fit flex-shrink px-2">
               <Menu />
             </aside>
           )}
-          <article className="flex-auto flex-shrink-0">
+          <article className="flex-auto flex-shrink-0 sm:px-2">
             <Outlet />
           </article>
         </div>
