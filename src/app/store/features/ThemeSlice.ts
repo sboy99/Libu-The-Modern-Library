@@ -1,21 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { toggleTheme, setWindowWidth } from "../reducers/ThemeReducer";
+import { setTheme, setWindowWidth } from "../reducers/ThemeReducer";
 
 export type ThemeState = {
   windowWidth: number;
-  darkMode: boolean;
+  theme: string;
+  title: string;
 };
 
 const initialState: ThemeState = {
   windowWidth: window.innerWidth,
-  darkMode: window.localStorage.getItem("theme") === `dark` ? true : false,
+  theme: `defaultLight`,
+  title: `Default Light`,
 };
 
 const ThemeSlice = createSlice({
   name: `theme`,
   initialState,
   reducers: {
-    toggleTheme,
+    setTheme,
     setWindowWidth,
   },
 });

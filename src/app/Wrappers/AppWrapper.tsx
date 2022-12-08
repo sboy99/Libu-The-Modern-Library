@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useLayout, useTheme } from "../store";
+import { validThemes } from "../data/Theme";
+import { useTheme } from "../store";
 import { Actions } from "../store/features";
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 };
 
 const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
-  const { darkMode, windowWidth } = useTheme();
+  const { windowWidth, theme } = useTheme();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,14 +21,22 @@ const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    let themeCode = window.localStorage.getItem("themeCode") || `defaultLight`;
+    let themeName = window.localStorage.getItem("themeName") || `Default Light`;
+    if (!validThemes.includes(themeCode)) {
+      themeCode = "defaultLight";
+      themeName = "Default Light";
+    }
+    dispatch(Actions.setTheme({ code: themeCode, title: themeName }));
+  }, []);
+
+  useEffect(() => {
     if (windowWidth >= 1024) {
       dispatch(Actions.closeSearchBar());
     }
   }, [windowWidth]);
 
-  return (
-    <div className={`relative ${darkMode && `theme-dark`}`}>{children}</div>
-  );
+  return <div className={`relative ${theme}`}>{children}</div>;
 };
 
 export default AppWrapper;

@@ -1,5 +1,7 @@
-import { NavLinks } from "../../../data";
+import { data } from "../../../data";
 import { NavLink, useLocation } from "react-router-dom";
+
+const { NavLinks } = data;
 
 const Links = (): JSX.Element => {
   const { pathname } = useLocation();

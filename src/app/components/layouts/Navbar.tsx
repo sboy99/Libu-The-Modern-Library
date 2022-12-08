@@ -1,11 +1,12 @@
 import React from "react";
 import { utilities } from "../../utilities";
 import { useLocation } from "react-router-dom";
-import ToggleTheme from "./navbar/ToggleTheme";
+// import ToggleTheme from "./navbar/ToggleTheme";
 import { StarIcon, Bars3Icon } from "@heroicons/react/24/outline";
-import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { UserCircleIcon, PaintBrushIcon } from "@heroicons/react/24/solid";
 import { HashLink } from "react-router-hash-link";
 import UserInfo from "./navbar/UserInfo";
+import Themes from "./navbar/Themes";
 import Searchbar from "./navbar/Searchbar";
 import Searchbutton from "./navbar/Searchbutton";
 import Logo from "./navbar/Logo";
@@ -54,15 +55,26 @@ const Navbar: React.FC = () => {
           </div>
           {/* separator */}
           <div className="flex items-center gap-2 px-2 sm:gap-4 sm:px-4">
-            {/* theme */}
-            {<ToggleTheme />}
+            {/* Multi theme select */}
+            {/* {<ToggleTheme />} */}
+            <Pop
+              Icon={PaintBrushIcon}
+              popDesc="Theme"
+              iconClass="w-8 h-8 sm:w-9 sm:h-9 p-1.5 text-skin-base group-hover:text-skin-inverted"
+              className="flex items-center justify-center "
+            >
+              <div className="min-w-[18rem] p-4 ">
+                <Themes />
+              </div>
+            </Pop>
             {/* additional links */}
             <Pop
               Icon={UserCircleIcon}
+              popDesc="Profile"
               iconClass="w-8 h-8 sm:w-9 sm:h-9 text-skin-base group-hover:text-skin-inverted"
               className="flex items-center justify-center "
             >
-              <div className="min-w-[18rem] rounded-lg bg-skin-pop p-4 shadow-md ">
+              <div className="min-w-[18rem] p-4">
                 <UserInfo />
               </div>
             </Pop>

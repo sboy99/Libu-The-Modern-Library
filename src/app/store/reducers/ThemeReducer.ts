@@ -1,13 +1,19 @@
 import { ThemeState } from "../features/ThemeSlice";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-export const toggleTheme = (state: ThemeState) => {
-  if (state.darkMode) {
-    window.localStorage.setItem("theme", "light");
-  } else {
-    window.localStorage.setItem("theme", "dark");
-  }
-  state.darkMode = !state.darkMode;
+type ThemePayload = {
+  code: string;
+  title: string;
+};
+
+export const setTheme = (
+  state: ThemeState,
+  action: PayloadAction<ThemePayload>
+) => {
+  window.localStorage.setItem("themeCode", action.payload.code);
+  window.localStorage.setItem("themeName", action.payload.title);
+  state.theme = action.payload.code;
+  state.title = action.payload.title;
 };
 
 export const setWindowWidth = (
