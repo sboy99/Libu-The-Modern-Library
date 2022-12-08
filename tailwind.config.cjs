@@ -20,40 +20,6 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      colors: {
-        "base-light": colors.slate[100],
-        "base-dark": colors.slate[900],
-
-        "light-bg": colors.white,
-        "dark-bg": colors.slate[700],
-        "light-bg-deep": colors.slate[100],
-        "dark-bg-deep": colors.slate[800],
-        "light-bg-hover": colors.slate[200],
-        "dark-bg-hover": colors.slate[600],
-        "light-bg-accent": colors.cyan[500],
-        "dark-bg-accent": colors.yellow[400],
-
-        "light-text": colors.slate[700],
-        "dark-text": colors.white,
-        "light-text-p": colors.slate[500],
-        "dark-text-p": colors.slate[300],
-        "light-text-accent": colors.cyan[500],
-        "dark-text-accent": colors.yellow[400],
-
-        "placeholder-light": colors.slate[500],
-        "placeholder-dark": colors.slate[400],
-
-        "light-border": colors.slate[200],
-        "dark-border": colors.slate[700],
-
-        "light-divide": colors.slate[300],
-        "dark-divide": colors.slate[500],
-
-        "light-ring": colors.cyan[500],
-        "dark-ring": colors.yellow[500],
-
-        cancle: colors.rose[600],
-      },
       textColor: {
         skin: {
           base: withOpacity("--color-text-base"),
