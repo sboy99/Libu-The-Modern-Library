@@ -1,7 +1,6 @@
 import React from "react";
 import { utilities } from "../../utilities";
 import { useLocation } from "react-router-dom";
-// import ToggleTheme from "./navbar/ToggleTheme";
 import { StarIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import { UserCircleIcon, PaintBrushIcon } from "@heroicons/react/24/solid";
 import { HashLink } from "react-router-hash-link";
