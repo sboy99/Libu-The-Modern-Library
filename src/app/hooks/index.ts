@@ -1,1 +1,3 @@
-export const hooks = {};
+import { useThemeDetector } from "./useThemeDetector";
+
+export const hooks = { useThemeDetector };

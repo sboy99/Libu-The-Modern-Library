@@ -1,16 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setTheme, setWindowWidth } from "../reducers/ThemeReducer";
+import {
+  setTheme,
+  setWindowWidth,
+  enableSyncWithSystem,
+  diableSyncWithSystem,
+} from "../reducers/ThemeReducer";
 
 export type ThemeState = {
   windowWidth: number;
   theme: string;
   title: string;
+  isSyncWithSystem: boolean;
 };
 
 const initialState: ThemeState = {
   windowWidth: window.innerWidth,
   theme: `defaultLight`,
   title: `Default Light`,
+  isSyncWithSystem: true,
 };
 
 const ThemeSlice = createSlice({
@@ -19,6 +26,8 @@ const ThemeSlice = createSlice({
   reducers: {
     setTheme,
     setWindowWidth,
+    enableSyncWithSystem,
+    diableSyncWithSystem,
   },
 });
 
