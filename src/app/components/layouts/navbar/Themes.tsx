@@ -51,7 +51,7 @@ const Theme = () => {
         </div>
         {/* right desc */}
         <div className="">
-          <h3 className="text-xl font-bold tracking-tight text-skin-accent">
+          <h3 className="text-xl font-bold capitalize tracking-tight text-skin-accent">
             {title}
           </h3>
           <p className="text-sm font-medium leading-4 tracking-tight text-skin-muted">
