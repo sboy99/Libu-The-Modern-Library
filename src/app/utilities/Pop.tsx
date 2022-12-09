@@ -42,7 +42,7 @@ const Pop: React.FC<PopProps> = ({
         leaveTo="transform scale-95 opacity-0"
       >
         <Popover.Panel
-          className={`absolute top-10 -right-4 z-20 rounded-lg bg-skin-pop shadow-md sm:top-12`}
+          className={`absolute top-10 -right-4 z-20 rounded-lg border border-skin-base bg-skin-pop shadow-md sm:top-12`}
         >
           <div className="pointer-events-none absolute right-5 h-5 w-5 origin-top-right rotate-45 rounded bg-skin-accent"></div>
           {popDesc && (

@@ -17,9 +17,20 @@ const withOpacity =
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        text: {
+          base: withOpacity("--color-text-base"),
+          muted: withOpacity("--color-text-muted"),
+          inverted: withOpacity("--color-text-inverted"),
+          accent: withOpacity("--color-text-accent"),
+          "accent-hover": withOpacity("--color-text-accent-hover"),
+        },
+        border: {
+          base: withOpacity("--color-border-base"),
+        },
+      },
       textColor: {
         skin: {
           base: withOpacity("--color-text-base"),
@@ -80,10 +91,14 @@ module.exports = {
         "screen-85": "85vh",
         "screen-90": "90vh",
       },
+      gridTemplateColumns: {
+        16: "repeat(16, minmax(0, 1fr))",
+      },
     },
   },
   plugins: [
     require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
     require("prettier-plugin-tailwindcss"),
     function ({ matchUtilities, theme }) {
       matchUtilities(
