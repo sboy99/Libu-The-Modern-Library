@@ -1,14 +1,19 @@
 import React from "react";
 
-type Props = {
+type ComponentProps = {
   children: React.ReactNode;
   className?: string;
 };
 
-const Component: React.FC<Props> = ({ children, className }) => {
+const Component: React.FC<ComponentProps> = ({
+  children,
+  className,
+}): JSX.Element => {
   return (
-    <div className={`w-full relative ${className}`}>
-      <div className="container mx-auto">{children}</div>
+    <div
+      className={` rounded-md border border-skin-base bg-skin-base p-4 text-skin-base ${className}`}
+    >
+      {children}
     </div>
   );
 };

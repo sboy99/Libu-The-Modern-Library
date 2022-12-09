@@ -49,22 +49,22 @@ const Searchbar: React.FC = (): JSX.Element => {
     >
       <div className="relative">
         {/* Magnifying Glass */}
-        <div className="pointer-events-none absolute inset-2 pl-2 text-light-text dark:text-dark-text">
+        <div className="pointer-events-none absolute inset-2 pl-2 text-skin-base">
           <MagnifyingGlassIcon className="h-6 w-6" />
         </div>
         <Combobox.Input
           ref={focus}
           placeholder="Search books"
-          className={`w-full rounded-full border-none bg-light-bg-deep px-4 py-2 pl-12 text-light-text placeholder:text-placeholder-light focus:ring-light-ring dark:bg-dark-bg dark:text-dark-text dark:placeholder:text-placeholder-dark  dark:focus:ring-dark-ring`}
+          className={`w-full rounded-full border-none bg-skin-muted px-4 py-2 pl-12 text-skin-base placeholder:text-skin-muted focus:ring-skin-base`}
           onChange={(event) => setQuery(event.target.value)}
         />
         {/* Key suggesion */}
-        <div className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full bg-dark-bg px-3 py-0.5 font-medium text-light-bg-deep dark:bg-light-bg-deep dark:text-dark-bg-deep sm:block">
+        <div className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full bg-skin-inverted px-3 py-0.5 font-medium text-skin-inverted sm:block">
           ctrl + /
         </div>
       </div>
       <Combobox.Options
-        className={`absolute inset-x-0 top-full mt-2  rounded-lg bg-light-bg p-4 text-light-text dark:bg-dark-bg dark:text-dark-text md:mt-4`}
+        className={`absolute inset-x-0 top-full mt-2 rounded-lg  bg-skin-pop p-4 text-skin-base shadow-md md:mt-4`}
       >
         {filteredPeople.length > 0 ? (
           filteredPeople.map((person) => (
@@ -73,7 +73,7 @@ const Searchbar: React.FC = (): JSX.Element => {
                 <div
                   className={`cursor-pointer py-2 px-4 ${
                     active &&
-                    `rounded-md bg-light-bg-accent font-semibold text-dark-text dark:bg-dark-bg-accent dark:text-light-text `
+                    `rounded-md bg-skin-accent font-semibold text-skin-inverted`
                   }`}
                 >
                   {person}
@@ -82,7 +82,7 @@ const Searchbar: React.FC = (): JSX.Element => {
             </Combobox.Option>
           ))
         ) : (
-          <div className="flex w-full items-center justify-center font-medium capitalize text-placeholder-light dark:text-placeholder-dark ">
+          <div className="flex w-full items-center justify-center font-medium capitalize text-skin-muted/60">
             No Options Matched
           </div>
         )}
