@@ -1,70 +1,90 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --color-text-base: 39, 39, 42; /* zink-800 */
+    --color-text-muted: 82, 82, 91; /* zink-600 */
+    --color-text-inverted: 255, 255, 255; /* white */
+    --color-text-accent: 6, 182, 212;
+    --color-text-accent-hover: 14, 165, 233;
+
+    --color-fill: 255, 255, 255;
+    --color-fill-muted: 244, 244, 245; /* zink-100 */
+    --color-fill-inverted: 39, 39, 42; /* zink-800 */
+    --color-fill-accent: 6, 182, 212;
+    --color-fill-pop: 255, 255, 255;
+    --color-fill-bg: 244, 244, 245;
+
+    --color-button-accent: 6, 182, 212;
+    --color-button-accent-hover: 14, 165, 233;
+    --color-button-accent-muted: 8, 145, 178;
+
+    --color-button-classic: 39, 39, 42;
+    --color-button-classic-hover: 63, 63, 70;
+    --color-button-classic-muted: 24, 24, 27;
+
+    --color-border-base: 228, 228, 231;
+    --color-border-accent: 6, 182, 212;
+
+    --color-ring-base: 6, 182, 212;
   }
-  a:hover {
-    color: #747bff;
+
+  .defaultDark {
+    --color-text-base: 255, 255, 255;
+    --color-text-muted: 226, 232, 240;
+    --color-text-inverted: 30, 41, 59;
+    --color-text-accent: 250, 204, 21; /*yellow-400 */
+    --color-text-accent-hover: 251, 191, 36; /*amber-400*/
+
+    --color-fill: 30, 41, 59;
+    --color-fill-muted: 51, 65, 85; /* slate-900 */
+    --color-fill-inverted: 241, 245, 249; /* slate-100 */
+    --color-fill-accent: 250, 204, 21;
+    --color-fill-pop: 51, 65, 85;
+    --color-fill-bg: 15, 23, 42;
+
+    --color-button-accent: 250, 204, 21;
+    --color-button-accent-hover: 250, 204, 21;
+    --color-button-accent-muted: 250, 204, 21;
+
+    --color-button-classic: 255, 255, 255;
+    --color-button-classic-hover: 241, 245, 249;
+    --color-button-classic-muted: 226, 232, 240;
+
+    --color-border-base: 71, 85, 105;
+    --color-border-accent: 250, 204, 21;
+
+    --color-ring-base: 250, 204, 21;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer components {
+  .divider-x {
+    @apply divide-x divide-skin-base;
+  }
+  .divider-y {
+    @apply divide-y divide-skin-base;
   }
 }
