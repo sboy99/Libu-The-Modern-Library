@@ -1,26 +1,43 @@
 import React from "react";
 import { utilities } from "../../utilities";
 import { useLocation } from "react-router-dom";
-import { StarIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import { StarIcon, Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { UserCircleIcon, PaintBrushIcon } from "@heroicons/react/24/solid";
 import { HashLink } from "react-router-hash-link";
+import { useLayout, useTheme } from "../../store";
+import { useDispatch } from "react-redux";
+import { Actions } from "../../store/features";
 import UserInfo from "./navbar/UserInfo";
 import Themes from "./navbar/Themes";
 import Searchbar from "./navbar/Searchbar";
 import Searchbutton from "./navbar/Searchbutton";
 import Logo from "./navbar/Logo";
-import { useTheme } from "../../store";
 
 const { Container, Pop } = utilities;
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();
   const { windowWidth: width } = useTheme();
+  const { isMenuOpen } = useLayout();
+  const dispatch = useDispatch();
+
+  function handleMenu() {
+    dispatch(Actions.toggleMenu());
+  }
 
   const SearchBar: React.FC = width < 768 ? Searchbutton : Searchbar;
+  const toggleIcon = isMenuOpen ? (
+    <XMarkIcon className="h-7 w-7 sm:h-8 sm:w-8" />
+  ) : (
+    <Bars2Icon className="h-7 w-7 sm:h-8 sm:w-8" />
+  );
+
   const Menu: JSX.Element = (
-    <button className="ml-2 rounded-full p-1 text-skin-base outline-none transition-all duration-300 ease-in-out hover:bg-skin-muted lg:hidden">
-      <Bars3Icon className="h-7 w-7 sm:h-8 sm:w-8" />
+    <button
+      onClick={handleMenu}
+      className="ml-2 rounded-full p-1 text-skin-base outline-none transition-all duration-300 ease-in-out hover:bg-skin-muted lg:hidden"
+    >
+      {toggleIcon}
     </button>
   );
 

@@ -4,6 +4,7 @@ import { validThemes } from "../data/Theme";
 import { useTheme } from "../store";
 import { Actions } from "../store/features";
 import { hooks } from "../hooks";
+import { useLocation } from "react-router-dom";
 
 const { useThemeDetector } = hooks;
 
@@ -14,6 +15,7 @@ type Props = {
 const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
   const isDarkTheme = useThemeDetector();
   const { windowWidth, theme, isSyncWithSystem } = useTheme();
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,6 +25,10 @@ const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    dispatch(Actions.closeMenu());
+  }, [pathname]);
 
   useEffect(() => {
     let themeCode, themeName;
@@ -49,6 +55,7 @@ const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
   useEffect(() => {
     if (windowWidth >= 1024) {
       dispatch(Actions.closeSearchBar());
+      dispatch(Actions.closeMenu());
     }
   }, [windowWidth]);
 
