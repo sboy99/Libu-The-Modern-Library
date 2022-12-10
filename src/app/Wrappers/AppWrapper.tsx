@@ -5,6 +5,9 @@ import { useTheme } from "../store";
 import { Actions } from "../store/features";
 import { hooks } from "../hooks";
 import { useLocation } from "react-router-dom";
+import { components } from "../components";
+
+const { Loading } = components;
 
 const { useThemeDetector } = hooks;
 
@@ -69,6 +72,7 @@ const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
           : theme
       }`}
     >
+      <Loading />
       {children}
     </div>
   );
