@@ -28,6 +28,7 @@
     "@types/react-router-hash-link": "^2.4.5",
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
+    "framer-motion": "^7.6.19",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "prettier-plugin-tailwindcss": "^0.2.0",

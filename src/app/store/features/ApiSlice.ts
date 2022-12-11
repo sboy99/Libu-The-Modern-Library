@@ -1,14 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  startFallingBack,
-  stopFallingBack,
-  startLoading,
-  stopLoading,
-  resetState,
-} from "../reducers/ApiReducer";
+import { startLoading, stopLoading, resetState } from "../reducers/ApiReducer";
 
 export interface apiState {
-  isFallingBack: boolean;
   isLoading: boolean;
   response: {
     isSuccess: boolean;
@@ -18,7 +11,6 @@ export interface apiState {
 }
 
 export const initialState: apiState = {
-  isFallingBack: false,
   isLoading: false,
   response: {
     isSuccess: false,
@@ -31,8 +23,6 @@ const ApiSlice = createSlice({
   name: `ApiService`,
   initialState,
   reducers: {
-    startFallingBack,
-    stopFallingBack,
     startLoading,
     stopLoading,
     resetState,

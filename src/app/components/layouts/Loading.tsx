@@ -1,16 +1,15 @@
 import React from "react";
-import { Dialog, Transition } from "@headlessui/react";
+// import { Dialog, Transition } from "@headlessui/react";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { utilities } from "../../utilities";
 import { BoltIcon } from "@heroicons/react/24/solid";
-import { useApi, useTheme } from "../../store";
+import { useApi, useLayout, useTheme } from "../../store";
 
 const { TypoGrapher } = utilities;
 
 const Loading: React.FC = () => {
-  const { isLoading, isFallingBack } = useApi();
-  const { theme } = useTheme();
-
-  const handleClose = (): void => {};
+  const { isLoading } = useApi();
+  const { isFallingBack } = useLayout();
 
   const content = (
     <TypoGrapher
@@ -28,25 +27,28 @@ const Loading: React.FC = () => {
     </TypoGrapher>
   );
 
+  const loaderVarients: Variants = {
+    initial: { opacity: 0, transition: { duration: 0.2, ease: "easeInOut" } },
+    onEnter: { opacity: 1 },
+    onExit: { opacity: 0 },
+  };
+
   return (
-    <Transition appear show={isLoading || isFallingBack}>
-      <Dialog onClose={handleClose} className={`relative z-50 ${theme}`}>
-        <Transition.Child
-          as={React.Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+    <AnimatePresence>
+      {(isLoading || isFallingBack) && (
+        <motion.div
+          key="loader"
+          variants={loaderVarients}
+          initial="initial"
+          animate="onEnter"
+          exit="onExit"
+          className="fixed inset-0 z-50 grid h-screen w-full place-content-center bg-skin-base/50 p-2 backdrop-blur-md"
         >
-          <Dialog.Panel className="fixed inset-0 grid h-screen w-full place-content-center bg-skin-base p-2">
-            {/* message */}
-            {content}
-          </Dialog.Panel>
-        </Transition.Child>
-      </Dialog>
-    </Transition>
+          {/* message */}
+          {content}
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

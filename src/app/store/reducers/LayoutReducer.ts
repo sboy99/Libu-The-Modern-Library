@@ -1,5 +1,11 @@
 import { LayoutState } from "../features/LayoutSlice";
 
+export const startFallingBack = (state: LayoutState) => {
+  state.isFallingBack = true;
+};
+export const stopFallingBack = (state: LayoutState) => {
+  state.isFallingBack = false;
+};
 export const openSearchBar = (state: LayoutState) => {
   state.isSearchBarOpen = true;
 };
