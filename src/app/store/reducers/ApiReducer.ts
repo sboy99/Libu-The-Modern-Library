@@ -7,12 +7,7 @@ export const startLoading = (state: apiState) => {
 export const stopLoading = (state: apiState) => {
   state.isLoading = false;
 };
-export const startFallingBack = (state: apiState) => {
-  state.isFallingBack = true;
-};
-export const stopFallingBack = (state: apiState) => {
-  state.isFallingBack = false;
-};
+
 export const resetState = (state: apiState) => {
   state = initialState;
 };
