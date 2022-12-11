@@ -94,6 +94,15 @@ module.exports = {
       gridTemplateColumns: {
         16: "repeat(16, minmax(0, 1fr))",
       },
+      keyframes: {
+        pokeLeft: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
+      animation: {
+        "poke-left": "pokeLeft 1s ease-in-out infinite alternate",
+      },
     },
   },
   plugins: [
