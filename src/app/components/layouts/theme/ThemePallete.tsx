@@ -9,6 +9,7 @@ const ThemePallete: React.FC<ThemeType> = ({ title, colors, code }) => {
   const dispatch = useDispatch();
 
   function setTheme() {
+    dispatch(Actions.diableSyncWithSystem());
     dispatch(Actions.setTheme({ code, title }));
   }
 

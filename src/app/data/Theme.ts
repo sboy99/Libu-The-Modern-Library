@@ -1,4 +1,5 @@
 export const validThemes = ["defaultLight", "defaultDark"];
+export const validNames = ["Default Light", "Default Dark"];
 
 export type ThemeType = {
   title: string;

@@ -10,8 +10,10 @@ export const setTheme = (
   state: ThemeState,
   action: PayloadAction<ThemePayload>
 ) => {
-  window.localStorage.setItem("themeCode", action.payload.code);
-  window.localStorage.setItem("themeName", action.payload.title);
+  if (!state.isSyncWithSystem) {
+    window.localStorage.setItem("themeCode", action.payload.code);
+    window.localStorage.setItem("themeName", action.payload.title);
+  }
   state.theme = action.payload.code;
   state.title = action.payload.title;
   state.isSyncWithSystem = false;
