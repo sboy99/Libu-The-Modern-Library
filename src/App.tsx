@@ -9,7 +9,7 @@ const { HomePage, AboutPage, BlogPage, BooksPage, ErrorPage } = lazyPages;
 
 const App = () => {
   return (
-    <div className="App min-h-screen bg-skin-deep">
+    <div className="App min-h-screen bg-skin-deep ">
       <React.Suspense fallback={<Fallback />}>
         <Routes>
           <Route path="/" element={<Layout />}>

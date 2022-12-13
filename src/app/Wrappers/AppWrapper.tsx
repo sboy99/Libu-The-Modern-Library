@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useTheme } from "../store";
 import { Actions } from "../store/features";
-import { hooks } from "../hooks";
+import { Hooks } from "../hooks";
 import { useLocation } from "react-router-dom";
 import { components } from "../components";
 
 const { Loading } = components;
 
-const { useThemeDetector } = hooks;
+const { useThemeObserver } = Hooks;
 
 type Props = {
   children: JSX.Element;
 };
 
 const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
-  useThemeDetector();
+  useThemeObserver();
   const { windowWidth, theme } = useTheme();
   const { pathname } = useLocation();
   const dispatch = useDispatch();

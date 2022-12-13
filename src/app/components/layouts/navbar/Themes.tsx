@@ -5,22 +5,15 @@ import ThemePallete from "../theme/ThemePallete";
 import { useTheme } from "../../../store";
 import { useDispatch } from "react-redux";
 import { Actions } from "../../../store/features";
-import { useState, useEffect } from "react";
+import { Hooks } from "../../../hooks";
 
 const { Themes } = data;
+const { useLightThemeDetector } = Hooks;
 
 const Theme = () => {
-  const LIGHT_THEME_REGEX = /light/i;
-
   const dispatch = useDispatch();
-  const { title, theme: code } = useTheme();
-  const [isLightTheme, setIsLightTheme] = useState(
-    LIGHT_THEME_REGEX.test(code)
-  );
-
-  useEffect(() => {
-    setIsLightTheme(LIGHT_THEME_REGEX.test(code));
-  }, [code]);
+  const { title } = useTheme();
+  const isLightTheme = useLightThemeDetector();
 
   function setSystemMode() {
     dispatch(Actions.enableSyncWithSystem());

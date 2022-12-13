@@ -13,7 +13,7 @@ import Searchbar from "./navbar/Searchbar";
 import Searchbutton from "./navbar/Searchbutton";
 import Logo from "./navbar/Logo";
 
-const { Container, Pop } = utilities;
+const { Container, Pop, Glow } = utilities;
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();
@@ -42,7 +42,8 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <Container className="z-50 border-b border-skin-base bg-skin-base px-2 sm:px-0">
+    <Container className="relative z-50 border-b border-skin-base bg-skin-base px-2 sm:px-0">
+      <Glow id="NavabarGlow" className="right-8 max-w-md lg:max-w-xl" />
       <nav className="flex h-full min-h-16 items-center justify-between sm:min-h-[5rem]">
         {/* logo on large screen */}
         <HashLink

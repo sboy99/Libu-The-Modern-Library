@@ -1,3 +1,9 @@
-import { useThemeDetector } from "./useThemeDetector";
+import { useThemeObserver } from "./useThemeObserver";
+import { useLightThemeDetector } from "./useLightThemeDetector";
+import { useAccentGradient } from "./useAccentGradient";
 
-export const hooks = { useThemeDetector };
+export const Hooks = {
+  useThemeObserver,
+  useLightThemeDetector,
+  useAccentGradient,
+};
