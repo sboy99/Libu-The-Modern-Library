@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Actions } from "../store/features";
 import { validThemes, validNames } from "../data/Theme";
 
-export const useThemeDetector = (): boolean => {
+export const useThemeObserver = (): void => {
   const dispatch = useDispatch();
 
   const getManualThemeCode = (): string | null =>
@@ -49,5 +49,5 @@ export const useThemeDetector = (): boolean => {
       darkModeMediaQuery.removeEventListener("change", mediaQueryListener);
   }, []);
 
-  return isDarkMode;
+  // return isDarkMode;
 };
