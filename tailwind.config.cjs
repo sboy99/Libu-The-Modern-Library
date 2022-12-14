@@ -120,7 +120,19 @@ module.exports = {
         },
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
-
+      matchUtilities(
+        {
+          "bg-dot": (value) => ({
+            backgroundImage: `radial-gradient(${value} 2px, transparent 2px), radial-gradient(${value} 2px, transparent 2px)`,
+            backgroundSize: `44px 44px`,
+            backgroundPosition: `0 0, 22px 22px`,
+          }),
+        },
+        {
+          values: flattenColorPalette(theme("backgroundColor")),
+          type: "color",
+        }
+      );
       matchUtilities(
         {
           highlight: (value) => ({ boxShadow: `inset 0 1px 0 0 ${value}` }),

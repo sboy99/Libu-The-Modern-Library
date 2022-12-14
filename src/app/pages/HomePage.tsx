@@ -5,7 +5,7 @@ const { Component, TypoGrapher } = utilities;
 
 const HomePage: React.FC = () => {
   return (
-    <Component className="relative min-h-screen">
+    <Component className="relative z-0 min-h-screen">
       <TypoGrapher className="" proseSize="prose-lg">
         <h4 className="text-skin-accent">Hello Sagar</h4>
         <h1>Garlic bread with cheese: What the science tells us</h1>
