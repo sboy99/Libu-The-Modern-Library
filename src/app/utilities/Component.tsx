@@ -16,7 +16,7 @@ const Component: React.FC<ComponentProps> = ({
 }): JSX.Element => {
   return (
     <div
-      className={` rounded-md border border-skin-base bg-skin-base p-4 text-skin-base ${className}`}
+      className={`relative rounded-md border border-skin-base bg-skin-base p-4 text-skin-base ${className}`}
     >
       {glowId && (
         <Glow id={glowId} className={glowClass ?? `right-0 max-w-4xl`} />

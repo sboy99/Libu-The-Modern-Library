@@ -20,20 +20,22 @@ const Layout: React.FC = (): JSX.Element => {
       </div>
       {/* Menu and outlet together */}
       <Container>
-        <div className="grid pt-4 lg:grid-cols-16 lg:gap-4">
+        <div className="grid py-4 lg:grid-cols-16 lg:gap-4">
           {windowWidth >= 1024 && (
             <aside className="sticky top-4 h-fit flex-shrink lg:col-span-3 ">
               <Menu />
             </aside>
           )}
           <article className="lg:col-span-full lg:col-start-4 ">
-            <Outlet />
+            <div className="">
+              <Outlet />
+              <Footer />
+            </div>
           </article>
         </div>
       </Container>
       {/* Menu for medium devices */}
       <DisplayMenu />
-      <Footer />
     </div>
   );
 };

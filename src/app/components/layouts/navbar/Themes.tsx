@@ -1,4 +1,4 @@
-import { data } from "../../../data";
+import { Data } from "../../../data";
 import { MoonIcon } from "@heroicons/react/24/solid";
 import { ComputerDesktopIcon, SunIcon } from "@heroicons/react/24/outline";
 import ThemePallete from "../theme/ThemePallete";
@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { Actions } from "../../../store/features";
 import { Hooks } from "../../../hooks";
 
-const { Themes } = data;
+const { Themes } = Data;
 const { useLightThemeDetector } = Hooks;
 
 const Theme = () => {

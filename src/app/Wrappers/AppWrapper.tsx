@@ -40,7 +40,7 @@ const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
   }, [windowWidth]);
 
   return (
-    <div className={`relative ${theme}`}>
+    <div className={`relative overflow-hidden ${theme}`}>
       <Loading />
       {children}
     </div>
