@@ -4,9 +4,8 @@ import {
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
 import { motion, Variants } from "framer-motion";
-import { utilities } from "../utilities";
+import { TypoGrapher, RoundedButtons } from "../utilities";
 import { useLocation, useNavigate } from "react-router";
-const { TypoGrapher, RoundedButtons } = utilities;
 
 const errorVarients: Variants = {
   initial: { opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } },
