@@ -1,12 +1,11 @@
 import React from "react";
-import { TypoGrapher, UnderlineText, Stripes } from "../../utilities";
+import { TypoGrapher, UnderlineText, Stripes, Glow } from "../../utilities";
 import {
   AcademicCapIcon,
   CodeBracketIcon,
   CommandLineIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/solid";
-
 const MainFeat = [
   {
     Icon: AcademicCapIcon,
@@ -34,9 +33,9 @@ const Hero: React.FC = () => {
   ));
 
   return (
-    <section itemID="Hero" className="relative z-0 min-h-screen-75 p-4">
+    <section itemID="Hero" className="relative z-0 p-4">
       {/* left */}
-      <div className="relative z-10 p-4 md:p-20">
+      <div className="relative p-4 md:p-20">
         <TypoGrapher className="prose-h1:mb-8 prose-h1:text-4xl prose-h4:text-skin-accent-hover prose-p:max-w-xl md:prose-h1:text-5xl">
           <h4>Suitable for every age</h4>
           <h1 className="max-w-lg tracking-tight md:max-w-7xl">
@@ -58,8 +57,12 @@ const Hero: React.FC = () => {
           <button className="flex flex-auto items-center justify-center gap-x-2 rounded-md bg-btn-classic py-2 px-6 font-semibold text-skin-inverted outline-none hover:bg-btn-classic-hover">
             Read Now <ChevronRightIcon className="h-5 w-5" />
           </button>
-          <button className="flex flex-auto items-center justify-center gap-x-2 rounded-md border border-skin-accent bg-skin-base py-2 px-6 font-semibold text-skin-accent outline-none hover:bg-skin-muted/70">
+          <button className="relative z-0 flex flex-auto items-center justify-center gap-x-2 rounded-md border border-skin-accent bg-skin-base py-2 px-6 font-semibold text-skin-accent outline-none hover:bg-skin-muted/50">
             Official Blogs <ChevronRightIcon className="h-5 w-5" />
+            <Glow
+              id="HeroButton"
+              className="right-24 w-[170%] translate-x-1/3 "
+            />
           </button>
         </div>
       </div>
@@ -67,7 +70,7 @@ const Hero: React.FC = () => {
       {/* decor */}
       <Stripes
         id="HeroStripes"
-        className="pointer-events-none absolute inset-x-0 -top-24 h-full text-skin-accent/40"
+        className="pointer-events-none absolute inset-x-0 -top-10 -z-10 h-full text-skin-accent/40"
       />
     </section>
   );
