@@ -2,13 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useTheme } from "../store";
 import { Actions } from "../store/features";
-import { Hooks } from "../hooks";
+import { useThemeObserver } from "../hooks";
 import { useLocation } from "react-router-dom";
-import { components } from "../components";
-
-const { Loading } = components;
-
-const { useThemeObserver } = Hooks;
+import { Loading } from "../components";
 
 type Props = {
   children: JSX.Element;

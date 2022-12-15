@@ -1,5 +1,5 @@
 import React from "react";
-import { utilities } from "../../utilities";
+import { Container, Pop, Glow } from "../../utilities";
 import { useLocation } from "react-router-dom";
 import { StarIcon, Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { UserCircleIcon, PaintBrushIcon } from "@heroicons/react/24/solid";
@@ -12,8 +12,6 @@ import Themes from "./navbar/Themes";
 import Searchbar from "./navbar/Searchbar";
 import Searchbutton from "./navbar/Searchbutton";
 import Logo from "./navbar/Logo";
-
-const { Container, Pop, Glow } = utilities;
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();

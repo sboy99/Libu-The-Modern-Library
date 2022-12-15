@@ -1,11 +1,7 @@
 import React from "react";
-import { utilities } from "../../../utilities";
+import { Container } from "../../../utilities";
 import { useLayout, useTheme } from "../../../store";
 import Searchbar from "./Searchbar";
-
-const { Container } = utilities;
-
-type Props = {};
 
 const SearchBox: React.FC = (): JSX.Element | null => {
   const { isSearchBarOpen: isOpen } = useLayout();

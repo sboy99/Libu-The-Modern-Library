@@ -1,9 +1,3 @@
-import { useThemeObserver } from "./useThemeObserver";
-import { useLightThemeDetector } from "./useLightThemeDetector";
-import { useAccentGradient } from "./useAccentGradient";
-
-export const Hooks = {
-  useThemeObserver,
-  useLightThemeDetector,
-  useAccentGradient,
-};
+export { useThemeObserver } from "./useThemeObserver";
+export { useLightThemeDetector } from "./useLightThemeDetector";
+export { useAccentGradient } from "./useAccentGradient";
