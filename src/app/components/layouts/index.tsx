@@ -20,11 +20,11 @@ const Layout: React.FC = (): JSX.Element => {
       <Container>
         <div className="grid py-4 lg:grid-cols-16 lg:gap-4">
           {windowWidth >= 1024 && (
-            <aside className="sticky top-4 h-fit flex-shrink lg:col-span-3 ">
+            <aside className="!sticky inset-x-0 top-4 h-fit flex-shrink lg:col-span-3 ">
               <Menu />
             </aside>
           )}
-          <article className="lg:col-span-full lg:col-start-4 ">
+          <article className="pb-4 lg:col-span-full lg:col-start-4">
             <div className="">
               <Outlet />
               <Footer />
