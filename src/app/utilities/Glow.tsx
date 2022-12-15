@@ -1,5 +1,5 @@
 import React from "react";
-import { Hooks } from "../hooks";
+import { useAccentGradient } from "../hooks";
 
 interface GlowType {
   id: string;
@@ -7,7 +7,7 @@ interface GlowType {
 }
 
 const Glow: React.FC<GlowType> = ({ id, className }) => {
-  const { from, to } = Hooks.useAccentGradient();
+  const { from, to } = useAccentGradient();
   return (
     <svg
       viewBox="0 0 384 12"

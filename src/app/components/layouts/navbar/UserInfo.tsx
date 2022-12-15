@@ -1,8 +1,6 @@
 import React from "react";
-import { utilities } from "../../../utilities";
+import { RoundedButtons } from "../../../utilities";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
-
-const { RoundedButtons } = utilities;
 
 const UserInfo: React.FC = (): JSX.Element => {
   const [userLoggedIn, setUserLoggedIn] = React.useState(false);

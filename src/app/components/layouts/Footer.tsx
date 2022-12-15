@@ -1,14 +1,11 @@
 import React from "react";
-import { utilities } from "../../utilities";
-import { components } from "..";
+import { Component } from "../../utilities";
+import { Logo } from "..";
 import { Data } from "../../data";
 import { Link } from "react-router-dom";
 import { Sublink } from "../../data/Footer";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { GithubIcon, DiscordIcon, LinkedInIcon, TwitterIcon } from "../icons";
-
-const { Component } = utilities;
-const { Logo } = components;
 
 const Footer: React.FC = () => {
   const links = Data.FooterLinks.map((link, indx) => (

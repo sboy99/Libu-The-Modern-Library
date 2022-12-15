@@ -1,11 +1,9 @@
 import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useLayout, useTheme } from "../../../store";
-import { components } from "../..";
+import { Menu } from "../..";
 import { useDispatch } from "react-redux";
 import { Actions } from "../../../store/features";
-
-const { Menu } = components;
 
 const DisplayMenu: React.FC = () => {
   const { theme } = useTheme();

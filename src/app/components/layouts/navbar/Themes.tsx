@@ -5,10 +5,9 @@ import ThemePallete from "../theme/ThemePallete";
 import { useTheme } from "../../../store";
 import { useDispatch } from "react-redux";
 import { Actions } from "../../../store/features";
-import { Hooks } from "../../../hooks";
+import { useLightThemeDetector } from "../../../hooks";
 
 const { Themes } = Data;
-const { useLightThemeDetector } = Hooks;
 
 const Theme = () => {
   const dispatch = useDispatch();

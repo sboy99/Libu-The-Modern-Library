@@ -1,11 +1,9 @@
 import React from "react";
 // import { Dialog, Transition } from "@headlessui/react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { utilities } from "../../utilities";
+import { TypoGrapher } from "../../utilities";
 import { BoltIcon } from "@heroicons/react/24/solid";
-import { useApi, useLayout, useTheme } from "../../store";
-
-const { TypoGrapher } = utilities;
+import { useApi, useLayout } from "../../store";
 
 const Loading: React.FC = () => {
   const { isLoading } = useApi();

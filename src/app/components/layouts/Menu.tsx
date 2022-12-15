@@ -1,8 +1,6 @@
 import React from "react";
 import Links from "./menu/Links";
-import { utilities } from "../../utilities";
-
-const { Glow } = utilities;
+import { Glow } from "../../utilities";
 
 const Menu: React.FC = (): JSX.Element => {
   return (
