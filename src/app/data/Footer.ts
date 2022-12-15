@@ -33,7 +33,7 @@ export const FooterLinks: Array<FooterLink> = [
     ],
   },
   {
-    mainTitle: `Activity`,
+    mainTitle: `Official Blogs`,
     subLinks: [
       {
         title: `Home`,
@@ -54,7 +54,7 @@ export const FooterLinks: Array<FooterLink> = [
     ],
   },
   {
-    mainTitle: `Official Blogs`,
+    mainTitle: `Activity`,
     subLinks: [
       {
         title: `Home`,

@@ -12,8 +12,10 @@ const { Logo } = components;
 
 const Footer: React.FC = () => {
   const links = Data.FooterLinks.map((link, indx) => (
-    <div key={link.mainTitle + indx} className="">
-      <p className="font-semibold text-skin-base ">{link.mainTitle}</p>
+    <div key={link.mainTitle + indx} className="w-24">
+      <p className="whitespace-nowrap font-semibold text-skin-base ">
+        {link.mainTitle}
+      </p>
       <Sublinks links={link.subLinks} />
     </div>
   ));
@@ -39,7 +41,7 @@ const Footer: React.FC = () => {
       glowClass="max-w-2xl -left-8"
     >
       {/* Grid Laout for Links */}
-      <div className="relative mx-auto grid grid-cols-2 gap-y-4 p-4 pb-8 md:grid-cols-3 md:place-items-center lg:grid-cols-4">
+      <div className="relative mx-auto grid grid-cols-2 place-items-center gap-y-12 p-4 pb-8 md:grid-cols-3 lg:grid-cols-4">
         {links}
       </div>
       {/* Social links copyright etc */}
