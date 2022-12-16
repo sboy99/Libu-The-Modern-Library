@@ -93,6 +93,12 @@ module.exports = {
       },
       gridTemplateColumns: {
         16: "repeat(16, minmax(0, 1fr))",
+        "fill-40": "repeat(auto-fill, minmax(10rem,1fr))",
+        "fill-64": "repeat(auto-fill, minmax(16rem,1fr))",
+        "fill-72": "repeat(auto-fill, minmax(18rem,1fr))",
+        "fill-76": "repeat(auto-fill, minmax(19rem,1fr))",
+        "fill-80": "repeat(auto-fill, minmax(20rem,1fr))",
+        "fill-96": "repeat(auto-fill, minmax(24rem,1fr))",
       },
       keyframes: {
         pokeLeft: {
