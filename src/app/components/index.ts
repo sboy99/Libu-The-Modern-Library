@@ -5,3 +5,4 @@ export { default as Logo } from "./layouts/navbar/Logo";
 
 export { default as Hero } from "./homePage/Hero";
 export { default as Incentatives } from "./homePage/Incentives";
+export { default as DisplaySignatureForm } from "./signature/DisplaySignatureForm";

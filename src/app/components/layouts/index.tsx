@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import SearchBox from "./navbar/SearchBox";
 import Menu from "./Menu";
 import DisplayMenu from "./menu/DisplayMenu";
+import { DisplaySignatureForm } from "..";
 import { useTheme } from "../../store";
 
 const Layout: React.FC = (): JSX.Element => {
@@ -34,6 +35,7 @@ const Layout: React.FC = (): JSX.Element => {
       </Container>
       {/* Menu for medium devices */}
       <DisplayMenu />
+      <DisplaySignatureForm className="z-20" />
     </div>
   );
 };

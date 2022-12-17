@@ -1,9 +1,21 @@
 import React from "react";
-import { RoundedButtons } from "../../../utilities";
+import { PopButton } from "../../../utilities";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { useDispatch } from "react-redux";
+import { Actions } from "../../../store/features";
 
 const UserInfo: React.FC = (): JSX.Element => {
+  const dispatch = useDispatch();
   const [userLoggedIn, setUserLoggedIn] = React.useState(false);
+
+  const openLoginForm = () => {
+    dispatch(Actions.setSignatureOption("login"));
+    dispatch(Actions.openSignForm());
+  };
+  const openRegisterForm = () => {
+    dispatch(Actions.setSignatureOption("register"));
+    dispatch(Actions.openSignForm());
+  };
 
   if (userLoggedIn) return <div className="">UserLoggedIn</div>;
 
@@ -23,14 +35,18 @@ const UserInfo: React.FC = (): JSX.Element => {
       </p>
       {/* Actions */}
       <div className="flex items-center justify-evenly">
-        <RoundedButtons
-          text="Sign Up"
+        <PopButton
+          onClick={openRegisterForm}
           className="bg-btn-accent text-skin-inverted"
-        />
-        <RoundedButtons
-          text="Log In"
+        >
+          Sign Up
+        </PopButton>
+        <PopButton
+          onClick={openLoginForm}
           className="border-2 border-skin-accent text-skin-accent"
-        />
+        >
+          Log In
+        </PopButton>
       </div>
     </div>
   );
