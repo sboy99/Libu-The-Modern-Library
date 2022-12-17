@@ -7,3 +7,5 @@ export { default as Glow } from "./Glow";
 export { default as UnderlineText } from "./UnderlineText";
 export { default as Stripes } from "./Stripes";
 export { default as SafeArea } from "./SafeArea";
+export { default as PopButton } from "./PopButton";
+export { default as StreachedBorder } from "./StreachedBorder";
