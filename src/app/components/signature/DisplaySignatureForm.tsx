@@ -3,7 +3,6 @@ import React from "react";
 import { useLayout } from "../../store";
 import Login from "./Login";
 import Register from "./Register";
-import { StreachedBorder } from "../../utilities";
 
 type DisplaySignatureType = {
   className?: string;
@@ -60,13 +59,7 @@ const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
             exit="onExit"
             className="relative -z-10 w-full  max-w-md rounded-md border border-text-base/10 bg-skin-base  p-4"
           >
-            <StreachedBorder
-              className="z-0 p-4"
-              styles="bg-text-accent/50"
-              breadth={2}
-            >
-              {signatureOption === "login" ? <Login /> : <Register />}
-            </StreachedBorder>
+            {signatureOption === "login" ? <Login /> : <Register />}
           </motion.div>
         </motion.div>
       )}

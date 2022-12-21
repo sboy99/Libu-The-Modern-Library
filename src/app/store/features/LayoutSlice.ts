@@ -25,7 +25,7 @@ const initialState: LayoutState = {
   isFallingBack: false,
   isSearchBarOpen: false,
   isMenuOpen: false,
-  isSignatureFormOpen: true,
+  isSignatureFormOpen: false,
   signatureOption: "login",
 };
 
