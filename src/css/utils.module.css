@@ -1,0 +1,14 @@
+.btn {
+  @apply rounded-full px-4 py-2 font-semibold outline-none;
+}
+
+.bordered-btn {
+  @apply border border-skin-base;
+}
+
+.submit-btn {
+  @apply !bg-skin-accent !px-6 !text-skin-inverted;
+}
+.cancel-btn {
+  @apply !text-skin-base hover:!bg-grid-btn-classic-hover;
+}

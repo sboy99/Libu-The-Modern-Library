@@ -9,3 +9,5 @@ export { default as Stripes } from "./Stripes";
 export { default as SafeArea } from "./SafeArea";
 export { default as PopButton } from "./PopButton";
 export { default as StreachedBorder } from "./StreachedBorder";
+export { default as FormikInput } from "./FormikInput";
+export { default as FormikCheckbox } from "./FormikCheckbox";
