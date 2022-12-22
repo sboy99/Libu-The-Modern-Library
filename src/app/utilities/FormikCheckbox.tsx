@@ -23,12 +23,12 @@ const FormikCheckbox: React.FC<Props> = ({
         value={formik.values[name]}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        className="h-5 w-5 rounded-md border-2 border-skin-accent text-skin-accent focus:ring-skin-base"
+        className="h-5 w-5 rounded-md border-2 border-text-muted/50 bg-transparent text-skin-accent ring-0 hover:border-skin-accent focus:outline-none focus:ring-0"
         {...inputProps}
       />
       <label
         htmlFor={name}
-        className="font-medium tracking-tight text-skin-accent"
+        className="font-medium tracking-tight text-skin-base"
       >
         {label}
       </label>

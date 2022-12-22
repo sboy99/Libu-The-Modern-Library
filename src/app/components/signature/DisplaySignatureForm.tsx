@@ -1,6 +1,9 @@
-import { AnimatePresence, Variants, motion } from "framer-motion";
 import React from "react";
+
+import { AnimatePresence, motion, Variants } from "framer-motion";
+
 import { useLayout } from "../../store";
+import { Stripes } from "../../utilities";
 import Login from "./Login";
 import Register from "./Register";
 
@@ -57,8 +60,12 @@ const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
             initial="initial"
             animate="onEnter"
             exit="onExit"
-            className="relative -z-10 w-full  max-w-md rounded-md border border-text-base/10 bg-skin-base  p-4"
+            className="relative -z-10 w-full  max-w-sm rounded-md border border-text-base/10 bg-skin-base  p-4"
           >
+            <Stripes
+              id="authStripe"
+              className="pointer-events-none absolute inset-x-0 top-4 -z-10 h-full text-skin-accent/40"
+            />
             {signatureOption === "login" ? <Login /> : <Register />}
           </motion.div>
         </motion.div>
