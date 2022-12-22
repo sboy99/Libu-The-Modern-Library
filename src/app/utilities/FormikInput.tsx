@@ -31,10 +31,10 @@ const FormikInput: React.FC<InputProps> = ({
         value={formik.values[name]}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        className={`rounded-full border bg-skin-base px-5 py-3 tracking-tight text-skin-base outline-none placeholder:text-skin-muted focus:ring-0  ${
+        className={`rounded-full border bg-skin-base px-5 py-3 tracking-tight text-skin-base outline-none placeholder:text-sm placeholder:text-skin-muted/50 focus:ring-0  ${
           formik.errors[name] && formik.touched[name]
             ? `!border-rose-600 focus:!ring-rose-600`
-            : `border-skin-base focus:border-skin-accent `
+            : `border-skin-base hover:border-text-base focus:border-skin-accent `
         } `}
       />
       {formik.errors[name] && formik.touched[name] && (

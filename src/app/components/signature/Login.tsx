@@ -1,13 +1,16 @@
 import React from "react";
-import type { LoginCred } from "../../types/login";
+
 import { useFormik } from "formik";
-import loginSchema from "../../schemas/login";
-import { FormikInput, FormikCheckbox } from "../../utilities";
 import { useDispatch } from "react-redux";
-import { Actions } from "../../store/features";
-import Styles from "../../../css/utils.module.css";
-import Headline from "./Headline";
+
 import { BoltIcon, XMarkIcon } from "@heroicons/react/24/solid";
+
+import Styles from "../../../css/utils.module.css";
+import loginSchema from "../../schemas/login";
+import { Actions } from "../../store/features";
+import type { LoginCred } from "../../types/authentication";
+import { FormikCheckbox, FormikInput } from "../../utilities";
+import Headline from "./Headline";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -39,7 +42,7 @@ const Login = () => {
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="relative mx-auto flex max-w-sm flex-col gap-2 pt-2 "
+      className="relative mx-auto flex max-w-xs flex-col gap-2 pt-2 "
     >
       <Headline
         Icon={BoltIcon}
@@ -61,11 +64,12 @@ const Login = () => {
         label="Password"
         name="password"
         type="password"
+        placeholder="Min 6 character"
         required
       />
-      <div className="my-2 flex flex-wrap-reverse items-center justify-between gap-4">
+      <div className="my-2 grid grid-cols-2 gap-4">
         <FormikCheckbox formik={formik} label="Remember Me" name="rememberMe" />
-        <div className="cursor-pointer px-4 font-medium tracking-tight text-skin-accent hover:text-skin-accent-hover">
+        <div className="cursor-pointer whitespace-nowrap px-4 font-medium tracking-tight text-skin-accent hover:text-skin-accent-hover">
           Forgot Password?
         </div>
       </div>
@@ -81,22 +85,22 @@ const Login = () => {
       </div>
 
       {/* don't have account -> sign up */}
-      <div className="mt-8 font-medium text-skin-base">
+      <button
+        type="button"
+        onClick={changeForm}
+        className="mt-6 pt-2 font-medium text-skin-base"
+      >
         New Here?{" "}
-        <button
-          type="button"
-          onClick={changeForm}
-          className="font-semibold capitalize text-skin-accent outline-none"
-        >
+        <span className="font-semibold capitalize text-skin-accent outline-none">
           create an account
-        </button>
-      </div>
+        </span>
+      </button>
 
       {/* close button */}
       <button
         type="button"
         onClick={closeForm}
-        className={`absolute top-4 right-0 font-medium text-skin-muted`}
+        className={`absolute top-1 -right-3 rounded-full p-3 font-medium text-skin-muted hover:bg-skin-muted`}
       >
         <XMarkIcon className="h-7 w-7" />
       </button>
