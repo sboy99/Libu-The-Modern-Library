@@ -54,16 +54,16 @@
   .defaultDark {
     --color-text-base: 255, 255, 255;
     --color-text-muted: 226, 232, 240;
-    --color-text-inverted: 30, 41, 59;
+    --color-text-inverted: 24, 24, 27;
     --color-text-accent: 250, 204, 21; /*yellow-400 */
     --color-text-accent-hover: 251, 191, 36; /*amber-400*/
 
-    --color-fill: 30, 41, 59;
-    --color-fill-muted: 51, 65, 85; /* slate-900 */
+    --color-fill: 24, 24, 27;
+    --color-fill-muted: 37, 37, 41;
     --color-fill-inverted: 241, 245, 249; /* slate-100 */
     --color-fill-accent: 250, 204, 21;
-    --color-fill-pop: 51, 65, 85;
-    --color-fill-bg: 15, 23, 42;
+    --color-fill-pop: 24, 24, 27;
+    --color-fill-bg: 0, 0, 0;
 
     --color-button-accent: 250, 204, 21;
     --color-button-accent-hover: 250, 204, 21;
@@ -73,7 +73,7 @@
     --color-button-classic-hover: 241, 245, 249;
     --color-button-classic-muted: 226, 232, 240;
 
-    --color-border-base: 71, 85, 105;
+    --color-border-base: 47, 47, 50;
     --color-border-accent: 250, 204, 21;
 
     --color-ring-base: 250, 204, 21;
