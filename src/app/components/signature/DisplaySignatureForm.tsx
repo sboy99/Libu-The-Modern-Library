@@ -49,7 +49,7 @@ const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
           initial="initial"
           animate="onEnter"
           exit="onExit"
-          className={`fixed inset-0 grid h-full w-full place-items-center bg-skin-deep/60 backdrop-blur-md ${
+          className={`fixed inset-0 grid h-full w-full place-items-center overflow-auto bg-skin-deep/60 backdrop-blur-md ${
             className && className
           }`}
         >
@@ -60,7 +60,7 @@ const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
             initial="initial"
             animate="onEnter"
             exit="onExit"
-            className="relative -z-10 w-full  max-w-sm rounded-md border border-text-base/10 bg-skin-base  p-4"
+            className="relative -z-10 h-fit w-full max-w-sm rounded-md border border-text-base/10 bg-skin-base p-4 lg:max-w-md"
           >
             <Stripes
               id="authStripe"
