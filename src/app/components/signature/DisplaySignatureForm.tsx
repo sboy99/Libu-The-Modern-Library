@@ -1,7 +1,10 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import React from "react";
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
 
+import { useOutsideClickHandler } from "../../hooks";
 import { useLayout } from "../../store";
+import { Actions } from "../../store/features";
 import { Stripes } from "../../utilities";
 import Login from "./Login";
 import Register from "./Register";
@@ -13,7 +16,12 @@ type DisplaySignatureType = {
 const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
   className,
 }): JSX.Element => {
+  const signCompRef = useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
   const { isSignatureFormOpen: isOpen, signatureOption } = useLayout();
+
+  const closeForm = () => dispatch(Actions.closeSignForm());
+  useOutsideClickHandler(signCompRef, closeForm);
 
   const signatureFormVarients: Variants = {
     initial: { opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } },
@@ -54,6 +62,7 @@ const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
         >
           {/* Form */}
           <motion.div
+            ref={signCompRef}
             key="formArea"
             variants={formVarients}
             initial="initial"
