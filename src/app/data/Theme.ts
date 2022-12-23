@@ -27,7 +27,7 @@ export const Themes: Array<ThemeType> = [
     title: `Default Dark`,
     code: `defaultDark`,
     colors: {
-      bg: "#1e293b",
+      bg: "#18181b",
       text: "#ffffff",
       textMuted: "#e2e8f0",
       button: "#facc15",
