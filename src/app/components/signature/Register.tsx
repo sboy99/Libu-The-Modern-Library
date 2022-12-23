@@ -1,9 +1,7 @@
-import React from "react";
-
-import { useFormik } from "formik";
-import { useDispatch } from "react-redux";
-
 import { FireIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { useFormik } from "formik";
+import React from "react";
+import { useDispatch } from "react-redux";
 
 import Styles from "../../../css/utils.module.css";
 import registerSchema from "../../schemas/register";

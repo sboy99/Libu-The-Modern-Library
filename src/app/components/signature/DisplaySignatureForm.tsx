@@ -1,6 +1,5 @@
-import React from "react";
-
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import React from "react";
 
 import { useLayout } from "../../store";
 import { Stripes } from "../../utilities";
