@@ -1,11 +1,12 @@
-import { Data } from "../../../data";
-import { MoonIcon } from "@heroicons/react/24/solid";
 import { ComputerDesktopIcon, SunIcon } from "@heroicons/react/24/outline";
-import ThemePallete from "../theme/ThemePallete";
-import { useTheme } from "../../../store";
+import { MoonIcon } from "@heroicons/react/24/solid";
 import { useDispatch } from "react-redux";
-import { Actions } from "../../../store/features";
+
+import { Data } from "../../../data";
 import { useLightThemeDetector } from "../../../hooks";
+import { useTheme } from "../../../store";
+import { Actions } from "../../../store/features";
+import ThemePallete from "../theme/ThemePallete";
 
 const { Themes } = Data;
 

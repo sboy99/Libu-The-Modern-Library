@@ -1,13 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+
+import { useTheme } from "../../store";
 import { Container } from "../../utilities";
+import { DisplaySignatureForm } from "..";
 import Footer from "./Footer";
-import Navbar from "./Navbar";
-import SearchBox from "./navbar/SearchBox";
 import Menu from "./Menu";
 import DisplayMenu from "./menu/DisplayMenu";
-import { DisplaySignatureForm } from "..";
-import { useTheme } from "../../store";
+import Navbar from "./Navbar";
+import SearchBox from "./navbar/SearchBox";
 
 const Layout: React.FC = (): JSX.Element => {
   const { windowWidth } = useTheme();
