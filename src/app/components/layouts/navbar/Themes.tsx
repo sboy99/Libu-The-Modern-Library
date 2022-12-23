@@ -6,6 +6,7 @@ import { Data } from "../../../data";
 import { useLightThemeDetector } from "../../../hooks";
 import { useTheme } from "../../../store";
 import { Actions } from "../../../store/features";
+import { PopButton } from "../../../utilities";
 import ThemePallete from "../theme/ThemePallete";
 
 const { Themes } = Data;
@@ -57,12 +58,12 @@ const Theme = () => {
       <div className="py-2">
         <h4 className="font-semibold text-skin-base">Select a Theme</h4>
         {/* theme options */}
-        <div className="grid grid-cols-2 gap-2 pt-2">{theme}</div>
+        <div className="pt-2">{theme}</div>
       </div>
 
       {/* sync with system */}
       <div className="flex items-center justify-center border-none pt-2">
-        <button
+        <PopButton
           onClick={setSystemMode}
           className="rounded-md border border-skin-base py-1 px-4 text-skin-base hover:bg-skin-muted/50"
         >
@@ -70,7 +71,7 @@ const Theme = () => {
             <ComputerDesktopIcon className="h-8 w-8 p-1" />
             Sync with System
           </div>
-        </button>
+        </PopButton>
       </div>
     </div>
   );

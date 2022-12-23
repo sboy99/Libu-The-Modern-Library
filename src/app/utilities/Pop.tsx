@@ -1,5 +1,5 @@
-import React from "react";
 import { Popover, Transition } from "@headlessui/react";
+import React from "react";
 
 type PopProps = {
   children: React.ReactNode;
@@ -37,7 +37,7 @@ const Pop: React.FC<PopProps> = ({
         enter="transition duration-500 ease-out"
         enterFrom="transform scale-95 opacity-0"
         enterTo="transform scale-100 opacity-100"
-        leave="transition duration-75 ease-out"
+        leave="transition duration-300 ease-out"
         leaveFrom="transform scale-300 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
