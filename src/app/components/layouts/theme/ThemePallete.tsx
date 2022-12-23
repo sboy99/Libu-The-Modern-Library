@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { ThemeType } from "../../../data/Theme";
 import { useTheme } from "../../../store";
 import { Actions } from "../../../store/features";
+import { PopButton } from "../../../utilities";
 
 const ThemePallete: React.FC<ThemeType> = ({ title, colors, code }) => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const ThemePallete: React.FC<ThemeType> = ({ title, colors, code }) => {
   }
 
   return (
-    <button
+    <PopButton
       onClick={setTheme}
       className="flex w-full flex-col gap-y-1 outline-none focus:ring-skin-base "
     >
@@ -27,7 +28,7 @@ const ThemePallete: React.FC<ThemeType> = ({ title, colors, code }) => {
       <p className="ml-1 flex items-center whitespace-nowrap text-sm font-medium capitalize text-skin-muted">
         {title}
       </p>
-    </button>
+    </PopButton>
   );
 };
 
