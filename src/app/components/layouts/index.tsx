@@ -12,6 +12,8 @@ import SearchBox from "./navbar/SearchBox";
 
 const Layout: React.FC = (): JSX.Element => {
   const { windowWidth } = useTheme();
+
+  //  don't set overflow here
   return (
     <div className="flex flex-col">
       <div className="z-10">
@@ -20,7 +22,7 @@ const Layout: React.FC = (): JSX.Element => {
       </div>
       {/* Menu and outlet together */}
       <Container>
-        <div className="grid overflow-hidden py-4 lg:grid-cols-16 lg:gap-4">
+        <div className="grid py-4 lg:grid-cols-16 lg:gap-4">
           {windowWidth >= 1024 && (
             <aside className="!sticky inset-x-0 top-4 h-fit flex-shrink lg:col-span-3 ">
               <Menu />

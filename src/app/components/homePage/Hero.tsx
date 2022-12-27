@@ -39,7 +39,10 @@ const Hero: React.FC = () => {
   ));
 
   return (
-    <section itemID="Hero" className="relative z-0 mt-4 md:pt-20">
+    <section
+      itemID="Hero"
+      className="relative z-0 mt-4 overflow-hidden md:pt-20"
+    >
       {/* left */}
       <SafeArea>
         <TypoGrapher className="prose-h1:mb-8 prose-h1:text-4xl prose-h4:text-skin-accent-hover prose-p:max-w-xl md:prose-h1:text-5xl">

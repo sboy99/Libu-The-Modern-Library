@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Layout, lazyPages } from "./app/pages";
+
 import { Fallback } from "./app/components";
+import { Layout, lazyPages } from "./app/pages";
 
 const { HomePage, AboutPage, BlogPage, BooksPage, ErrorPage } = lazyPages;
 

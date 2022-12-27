@@ -7,7 +7,7 @@ type Props = {
 
 const Container: React.FC<Props> = ({ children, className }) => {
   return (
-    <div className={`relative w-full ${className ?? className}`}>
+    <div className={`relative w-full ${className || ``}`}>
       <div className="container mx-auto">{children}</div>
     </div>
   );
