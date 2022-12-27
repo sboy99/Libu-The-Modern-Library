@@ -1,10 +1,11 @@
 import React from "react";
-import Links from "./menu/Links";
+
 import { Glow } from "../../utilities";
+import Links from "./menu/Links";
 
 const Menu: React.FC = (): JSX.Element => {
   return (
-    <menu className="relative max-h-96 min-h-64 w-full overflow-y-auto rounded-md border border-skin-base bg-skin-base">
+    <menu className="max-h-96 min-h-64 w-full overflow-y-auto rounded-md border border-skin-base bg-skin-base">
       <div className="py-4">
         <Links />
       </div>
