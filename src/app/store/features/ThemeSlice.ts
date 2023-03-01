@@ -1,19 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import type { IThemeState } from '../interfaces/StoreInterface';
 import {
+  diableSyncWithSystem,
+  enableSyncWithSystem,
   setTheme,
   setWindowWidth,
-  enableSyncWithSystem,
-  diableSyncWithSystem,
-} from "../reducers/ThemeReducer";
+} from '../reducers/ThemeReducer';
 
-export type ThemeState = {
-  windowWidth: number;
-  theme: string;
-  title: string;
-  isSyncWithSystem: boolean;
-};
-
-const initialState: ThemeState = {
+const initialState: IThemeState = {
   windowWidth: window.innerWidth,
   theme: `defaultLight`,
   title: `Default Light`,

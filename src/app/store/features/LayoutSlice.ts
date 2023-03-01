@@ -1,32 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import type { ILayoutState } from '../interfaces/StoreInterface';
 import {
+  closeMenu,
+  closeSearchBar,
+  closeSignForm,
+  openMenu,
+  openSearchBar,
+  openSignForm,
+  setSignatureOption,
   startFallingBack,
   stopFallingBack,
-  openSearchBar,
-  closeSearchBar,
-  openMenu,
-  closeMenu,
   toggleMenu,
-  openSignForm,
-  closeSignForm,
-  setSignatureOption,
-} from "../reducers/LayoutReducer";
+} from '../reducers/LayoutReducer';
 
-export type signatureOptionType = "login" | "register";
-
-export type LayoutState = {
-  isFallingBack: boolean;
-  isSearchBarOpen: boolean;
-  isMenuOpen: boolean;
-  isSignatureFormOpen: boolean;
-  signatureOption: signatureOptionType;
-};
-const initialState: LayoutState = {
+const initialState: ILayoutState = {
   isFallingBack: false,
   isSearchBarOpen: false,
   isMenuOpen: false,
   isSignatureFormOpen: false,
-  signatureOption: "login",
+  signatureOption: 'login',
 };
 
 const LayoutSlice = createSlice({
