@@ -1,8 +1,9 @@
-import React from "react";
-import { FormikProps } from "formik";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { FormikProps } from 'formik';
+import type { ComponentProps } from 'react';
+import React from 'react';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface InputProps extends ComponentProps<'input'> {
   formik: FormikProps<any>;
   label: string;
   name: string;

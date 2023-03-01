@@ -1,43 +1,54 @@
-import { FireIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { useFormik } from "formik";
-import React from "react";
-import { useDispatch } from "react-redux";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { TRegisterPayload } from '@/app/types/authentication';
 
-import Styles from "../../../css/utils.module.css";
-import registerSchema from "../../schemas/register";
-import { Actions } from "../../store/features";
-import type { RegisterCred } from "../../types/authentication";
-import { FormikCheckbox, FormikInput } from "../../utilities";
-import Headline from "./Headline";
+import { FormikCheckbox, FormikInput } from '@/app/components/utilities';
+import registerSchema from '@/app/schemas/register';
+import { useApi } from '@/app/store';
+import { registerUser } from '@/app/store/api/authentication';
+import { Actions } from '@/app/store/features';
+import Styles from '@/css/utils.module.css';
+import { FireIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { useFormik } from 'formik';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import Headline from './Headline';
 
 const Register = () => {
+  const { isFormLoading, response } = useApi();
   const dispatch = useDispatch();
+
   const closeForm = () => {
     dispatch(Actions.closeSignForm());
   };
 
   const changeForm = () => {
-    dispatch(Actions.setSignatureOption("login"));
+    dispatch(Actions.setSignatureOption('login'));
   };
 
-  const initialValues: RegisterCred = {
-    userName: ``,
+  const initialValues: TRegisterPayload = {
+    name: ``,
     email: ``,
     password: ``,
     confirmPassword: ``,
     agreeTermsAndConditions: false,
   };
 
-  const onSubmit = (values: RegisterCred) => {
-    console.log(values);
+  const onSubmit = (values: TRegisterPayload) => {
+    dispatch(registerUser(values) as any);
   };
 
-  const formik = useFormik<RegisterCred>({
+  const formik = useFormik<TRegisterPayload>({
     initialValues,
     onSubmit,
     validationSchema: registerSchema,
     validateOnBlur: true,
   });
+
+  useEffect(() => {
+    if (response.type && response.type === 'success') {
+      closeForm();
+    }
+  }, [response.type]);
 
   return (
     <form
@@ -52,7 +63,7 @@ const Register = () => {
       <FormikInput
         formik={formik}
         label="Full Name"
-        name="userName"
+        name="name"
         type="text"
         placeholder="Your Name"
         autoComplete="off"
@@ -95,9 +106,12 @@ const Register = () => {
       <div className="my-2 flex items-center justify-end gap-2">
         <button
           type="submit"
-          className={`${Styles["btn"]} ${Styles["submit-btn"]} !w-full py-3`}
+          disabled={isFormLoading}
+          className={`${Styles['btn']} ${Styles['submit-btn']} !w-full py-3 ${
+            isFormLoading && 'opacity-50'
+          }`}
         >
-          Create
+          {isFormLoading ? 'Signing..' : 'Sign In'}
         </button>
       </div>
 
@@ -107,7 +121,7 @@ const Register = () => {
         onClick={changeForm}
         className="mt-6 pt-2 font-medium text-skin-base"
       >
-        Having an account?{" "}
+        Having an account?{' '}
         <span className="font-semibold capitalize text-skin-accent outline-none">
           Log in
         </span>

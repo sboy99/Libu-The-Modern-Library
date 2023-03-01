@@ -1,19 +1,19 @@
-import React from "react";
-import { PopButton } from "../../../utilities";
-import { UserCircleIcon } from "@heroicons/react/24/solid";
-import { useDispatch } from "react-redux";
-import { Actions } from "../../../store/features";
+import { UserCircleIcon } from '@heroicons/react/24/solid';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Actions } from '../../../store/features';
+import { PopButton } from '../../utilities';
 
 const UserInfo: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const [userLoggedIn, setUserLoggedIn] = React.useState(false);
 
   const openLoginForm = () => {
-    dispatch(Actions.setSignatureOption("login"));
+    dispatch(Actions.setSignatureOption('login'));
     dispatch(Actions.openSignForm());
   };
   const openRegisterForm = () => {
-    dispatch(Actions.setSignatureOption("register"));
+    dispatch(Actions.setSignatureOption('register'));
     dispatch(Actions.openSignForm());
   };
 

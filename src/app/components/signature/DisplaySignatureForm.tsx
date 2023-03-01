@@ -1,13 +1,13 @@
-import { AnimatePresence, motion, Variants } from "framer-motion";
-import React, { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { AnimatePresence, motion, Variants } from 'framer-motion';
+import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { useOutsideClickHandler } from "../../hooks";
-import { useLayout } from "../../store";
-import { Actions } from "../../store/features";
-import { Stripes } from "../../utilities";
-import Login from "./Login";
-import Register from "./Register";
+import { useOutsideClickHandler } from '../../hooks';
+import { useLayout } from '../../store';
+import { Actions } from '../../store/features';
+import { Stripes } from '../utilities';
+import Login from './Login';
+import Register from './Register';
 
 type DisplaySignatureType = {
   className?: string;
@@ -24,7 +24,7 @@ const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
   useOutsideClickHandler(signCompRef, closeForm);
 
   const signatureFormVarients: Variants = {
-    initial: { opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } },
+    initial: { opacity: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
     onEnter: { opacity: 1 },
     onExit: { opacity: 0, transition: { delay: 0.4 } },
   };
@@ -33,7 +33,7 @@ const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
     initial: {
       opacity: 0,
       translateY: 50,
-      transition: { ease: "easeInOut" },
+      transition: { ease: 'easeInOut' },
     },
     onEnter: {
       opacity: 1,
@@ -74,7 +74,7 @@ const DisplaySignatureForm: React.FC<DisplaySignatureType> = ({
               id="authStripe"
               className="pointer-events-none absolute inset-x-0 top-4 -z-10 h-full text-skin-accent/40"
             />
-            {signatureOption === "login" ? <Login /> : <Register />}
+            {signatureOption === 'login' ? <Login /> : <Register />}
           </motion.div>
         </motion.div>
       )}

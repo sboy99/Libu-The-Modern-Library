@@ -1,7 +1,7 @@
-import * as yup from "yup";
+import * as yup from 'yup';
 
 const registerSchema = yup.object({
-  userName: yup
+  name: yup
     .string()
     .required(`Name is required`)
     .min(2, `Minimum length should be 2`)
@@ -14,12 +14,12 @@ const registerSchema = yup.object({
   confirmPassword: yup
     .string()
     .required(`Please confirm your password`)
-    .when("password", {
+    .when('password', {
       is: (password: string) =>
         password && password.length > 0 ? true : false,
       then: yup
         .string()
-        .oneOf([yup.ref("password")], `Password does not match`),
+        .oneOf([yup.ref('password')], `Password does not match`),
     }),
   agreeTermsAndConditions: yup.boolean().required(),
 });

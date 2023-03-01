@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { Glow } from "../../utilities";
-import Links from "./menu/Links";
+import { Glow } from '../utilities';
+import Links from './menu/Links';
 
 const Menu: React.FC = (): JSX.Element => {
   return (

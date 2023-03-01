@@ -1,6 +1,6 @@
-import React from "react";
-import { SafeArea, TypoGrapher } from "../../utilities";
-import { IncentativeList, IncentiveType } from "../../data/Incentives";
+import React from 'react';
+import { IncentativeList, IncentiveType } from '../../data/Incentives';
+import { SafeArea, TypoGrapher } from '../utilities';
 
 const Incentives: React.FC = () => {
   const incentives = IncentativeList.map(({ Icon, desc, title }, indx) => (

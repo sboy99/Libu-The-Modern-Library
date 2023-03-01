@@ -1,17 +1,17 @@
-import React from "react";
-import {
-  TypoGrapher,
-  UnderlineText,
-  Stripes,
-  Glow,
-  SafeArea,
-} from "../../utilities";
 import {
   AcademicCapIcon,
+  ChevronRightIcon,
   CodeBracketIcon,
   CommandLineIcon,
-  ChevronRightIcon,
-} from "@heroicons/react/24/solid";
+} from '@heroicons/react/24/solid';
+import React from 'react';
+import {
+  Glow,
+  SafeArea,
+  Stripes,
+  TypoGrapher,
+  UnderlineText,
+} from '../utilities';
 const MainFeat = [
   {
     Icon: AcademicCapIcon,
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
         <TypoGrapher className="prose-h1:mb-8 prose-h1:text-4xl prose-h4:text-skin-accent-hover prose-p:max-w-xl md:prose-h1:text-5xl">
           <h4>Suitable for every age</h4>
           <h1 className="max-w-lg tracking-tight md:max-w-7xl">
-            Books that can feed your Hungry{" "}
+            Books that can feed your Hungry{' '}
             <UnderlineText>Knowledge</UnderlineText>
           </h1>
           <p>

@@ -1,13 +1,7 @@
-export type LoginCred = {
-  email: string;
-  password: string;
-  rememberMe: boolean;
-};
+import type * as yup from 'yup';
 
-export type RegisterCred = {
-  userName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  agreeTermsAndConditions: boolean;
-};
+import type loginSchema from '../schemas/login';
+import type registerSchema from '../schemas/register';
+
+export type TLoginPayload = yup.InferType<typeof loginSchema>;
+export type TRegisterPayload = yup.InferType<typeof registerSchema>;

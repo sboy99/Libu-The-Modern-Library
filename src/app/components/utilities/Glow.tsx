@@ -1,5 +1,5 @@
-import React from "react";
-import { useAccentGradient } from "../hooks";
+import React from 'react';
+import { useAccentGradient } from '../../hooks';
 
 interface GlowType {
   id: string;
@@ -17,7 +17,7 @@ const Glow: React.FC<GlowType> = ({ id, className }) => {
     >
       <mask
         id={`${id}-a`}
-        style={{ maskType: "alpha" }}
+        style={{ maskType: 'alpha' }}
         maskUnits="userSpaceOnUse"
         x={48}
         y={0}
@@ -39,7 +39,7 @@ const Glow: React.FC<GlowType> = ({ id, className }) => {
       </g>
       <mask
         id={`${id}-d`}
-        style={{ maskType: "alpha" }}
+        style={{ maskType: 'alpha' }}
         maskUnits="userSpaceOnUse"
         x={116}
         y={0}

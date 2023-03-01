@@ -1,16 +1,16 @@
-import React from "react";
-import { Component } from "../../utilities";
-import { Logo } from "..";
-import { Data } from "../../data";
-import { Link } from "react-router-dom";
-import { Sublink } from "../../data/Footer";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Logo } from '..';
 import {
-  GithubIcon,
   DiscordIcon,
+  GithubIcon,
   LinkedInIcon,
   TwitterIcon,
-} from "../../../assets/icons";
+} from '../../../assets/icons';
+import { Data } from '../../data';
+import { Sublink } from '../../data/Footer';
+import { Component } from '../utilities';
 
 const Footer: React.FC = () => {
   const links = Data.FooterLinks.map((link, indx) => (
