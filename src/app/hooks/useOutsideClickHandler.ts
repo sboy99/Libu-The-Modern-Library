@@ -1,14 +1,14 @@
-import { RefObject, useEffect } from "react";
+import { RefObject, useEffect } from 'react';
 
 type Callback = () => void;
 
 function assertIsNode(e: EventTarget | null): asserts e is Node {
-  if (!e || !("nodeType" in e)) {
+  if (!e || !('nodeType' in e)) {
     throw new Error(`Node expected`);
   }
 }
 
-const useOutsideClickHandler = (
+export const useOutsideClickHandler = (
   ref: RefObject<HTMLDivElement>,
   fn: Callback
 ): void => {
@@ -19,11 +19,9 @@ const useOutsideClickHandler = (
         fn();
       }
     }
-    document.addEventListener("mousedown", handleClickOutside, true);
+    document.addEventListener('mousedown', handleClickOutside, true);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside, true);
+      document.removeEventListener('mousedown', handleClickOutside, true);
     };
   }, [ref]);
 };
-
-export default useOutsideClickHandler;
