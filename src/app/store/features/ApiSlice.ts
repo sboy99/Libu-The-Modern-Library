@@ -1,21 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { startLoading, stopLoading, resetState } from "../reducers/ApiReducer";
+import type { IApiState } from '../interfaces/StoreInterface';
 
-export interface apiState {
-  isLoading: boolean;
-  response: {
-    isSuccess: boolean;
-    isError: boolean;
-    message: string;
-  };
-}
+import { createSlice } from '@reduxjs/toolkit';
+import {
+  resetApiResponse,
+  setApiResponse,
+  startFormLoading,
+  startLoading,
+  stopFormLoading,
+  stopLoading,
+} from '../reducers/ApiReducer';
 
-export const initialState: apiState = {
+const initialState: IApiState = {
   isLoading: false,
+  isFormLoading: false,
   response: {
-    isSuccess: false,
-    isError: false,
-    message: ``,
+    type: null,
+    message: null,
   },
 };
 
@@ -23,9 +23,12 @@ const ApiSlice = createSlice({
   name: `ApiService`,
   initialState,
   reducers: {
+    resetApiResponse,
+    setApiResponse,
+    startFormLoading,
+    stopFormLoading,
     startLoading,
     stopLoading,
-    resetState,
   },
 });
 
