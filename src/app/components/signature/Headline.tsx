@@ -1,6 +1,6 @@
-import React from "react";
-import type { IconType } from "../../types/icon";
-import { TypoGrapher } from "../../utilities";
+import React from 'react';
+import type { IconType } from '../../types/icon';
+import { TypoGrapher } from '../utilities';
 
 type Props = {
   Icon: IconType;

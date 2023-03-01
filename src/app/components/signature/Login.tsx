@@ -1,41 +1,52 @@
-import { BoltIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { useFormik } from "formik";
-import React from "react";
-import { useDispatch } from "react-redux";
+import { BoltIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
 
-import Styles from "../../../css/utils.module.css";
-import loginSchema from "../../schemas/login";
-import { Actions } from "../../store/features";
-import type { LoginCred } from "../../types/authentication";
-import { FormikCheckbox, FormikInput } from "../../utilities";
-import Headline from "./Headline";
+import { useApi } from '@/app/store';
+import { loginUser } from '@/app/store/api/authentication';
+import { useEffect } from 'react';
+import Styles from '../../../css/utils.module.css';
+import loginSchema from '../../schemas/login';
+import { Actions } from '../../store/features';
+import type { TLoginPayload } from '../../types/authentication';
+import { FormikCheckbox, FormikInput } from '../utilities';
+import Headline from './Headline';
 
 const Login = () => {
+  const { isFormLoading, response } = useApi();
   const dispatch = useDispatch();
+
   const closeForm = () => {
     dispatch(Actions.closeSignForm());
   };
 
   const changeForm = () => {
-    dispatch(Actions.setSignatureOption("register"));
+    dispatch(Actions.setSignatureOption('register'));
   };
 
-  const initialValues: LoginCred = {
+  const initialValues: TLoginPayload = {
     email: ``,
     password: ``,
     rememberMe: false,
   };
 
-  const onSubmit = (values: LoginCred) => {
-    console.log(values);
+  const onSubmit = (values: TLoginPayload) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dispatch(loginUser(values) as any);
   };
 
-  const formik = useFormik<LoginCred>({
+  const formik = useFormik<TLoginPayload>({
     initialValues,
     onSubmit,
     validationSchema: loginSchema,
     validateOnBlur: true,
   });
+
+  useEffect(() => {
+    if (response.type && response.type === 'success') {
+      closeForm();
+    }
+  }, [response.type]);
 
   return (
     <form
@@ -76,9 +87,11 @@ const Login = () => {
       <div className="my-2 flex items-center justify-end gap-2">
         <button
           type="submit"
-          className={`${Styles["btn"]} ${Styles["submit-btn"]} !w-full py-3`}
+          className={`${Styles['btn']} ${Styles['submit-btn']} !w-full py-3 ${
+            isFormLoading && 'opacity-75'
+          }`}
         >
-          Submit
+          {isFormLoading ? 'Stay Tuned...' : 'Log In'}
         </button>
       </div>
 
@@ -88,7 +101,7 @@ const Login = () => {
         onClick={changeForm}
         className="mt-6 pt-2 font-medium text-skin-base"
       >
-        New Here?{" "}
+        New Here?{' '}
         <span className="font-semibold capitalize text-skin-accent outline-none">
           create an account
         </span>

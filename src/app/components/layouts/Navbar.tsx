@@ -1,17 +1,17 @@
-import React from "react";
-import { Container, Pop, Glow } from "../../utilities";
-import { useLocation } from "react-router-dom";
-import { StarIcon, Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { UserCircleIcon, PaintBrushIcon } from "@heroicons/react/24/solid";
-import { HashLink } from "react-router-hash-link";
-import { useLayout, useTheme } from "../../store";
-import { useDispatch } from "react-redux";
-import { Actions } from "../../store/features";
-import UserInfo from "./navbar/UserInfo";
-import Themes from "./navbar/Themes";
-import Searchbar from "./navbar/Searchbar";
-import Searchbutton from "./navbar/Searchbutton";
-import Logo from "./navbar/Logo";
+import { Bars2Icon, StarIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { PaintBrushIcon, UserCircleIcon } from '@heroicons/react/24/solid';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import { useLayout, useTheme } from '../../store';
+import { Actions } from '../../store/features';
+import { Container, Glow, Pop } from '../utilities';
+import Logo from './navbar/Logo';
+import Searchbar from './navbar/Searchbar';
+import Searchbutton from './navbar/Searchbutton';
+import Themes from './navbar/Themes';
+import UserInfo from './navbar/UserInfo';
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
               rel="noopener noreferrer"
               className="rounded-full bg-btn-accent p-1 text-skin-inverted sm:flex sm:items-center sm:gap-1 sm:whitespace-nowrap sm:px-4 sm:py-2 sm:font-semibold sm:tracking-tight"
             >
-              <StarIcon className="h-5 w-5 sm:h-6 sm:w-6" />{" "}
+              <StarIcon className="h-5 w-5 sm:h-6 sm:w-6" />{' '}
               <p className="hidden sm:block">Star Us</p>
             </a>
           </div>

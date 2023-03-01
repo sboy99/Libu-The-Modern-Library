@@ -1,14 +1,14 @@
-import React from "react";
 import {
   ArrowLeftIcon,
   QuestionMarkCircleIcon,
-} from "@heroicons/react/24/outline";
-import { motion, Variants } from "framer-motion";
-import { TypoGrapher, RoundedButtons } from "../utilities";
-import { useLocation, useNavigate } from "react-router";
+} from '@heroicons/react/24/outline';
+import { Variants, motion } from 'framer-motion';
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router';
+import { RoundedButtons, TypoGrapher } from '../components/utilities';
 
 const errorVarients: Variants = {
-  initial: { opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } },
+  initial: { opacity: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
 };
@@ -18,7 +18,7 @@ const ErrorPage: React.FC = () => {
   const navigateTo = useNavigate();
 
   function backToHome() {
-    navigateTo("/", { state: location, replace: true });
+    navigateTo('/', { state: location, replace: true });
   }
 
   const content: JSX.Element = (

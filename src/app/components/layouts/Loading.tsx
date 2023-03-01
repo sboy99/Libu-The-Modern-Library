@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 // import { Dialog, Transition } from "@headlessui/react";
-import { AnimatePresence, motion, Variants } from "framer-motion";
-import { TypoGrapher } from "../../utilities";
-import { BoltIcon } from "@heroicons/react/24/solid";
-import { useApi, useLayout } from "../../store";
+import { BoltIcon } from '@heroicons/react/24/solid';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { useApi, useLayout } from '../../store';
+import { TypoGrapher } from '../utilities';
 
 const Loading: React.FC = () => {
   const { isLoading } = useApi();
@@ -26,7 +26,7 @@ const Loading: React.FC = () => {
   );
 
   const loaderVarients: Variants = {
-    initial: { opacity: 0, transition: { duration: 0.2, ease: "easeInOut" } },
+    initial: { opacity: 0, transition: { duration: 0.2, ease: 'easeInOut' } },
     onEnter: { opacity: 1 },
     onExit: { opacity: 0 },
   };

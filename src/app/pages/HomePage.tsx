@@ -1,6 +1,6 @@
-import React from "react";
-import { Hero, Incentatives } from "../components";
-import { Component, Container } from "../utilities";
+import React from 'react';
+import { Hero, Incentatives } from '../components';
+import { Component, Container } from '../components/utilities';
 
 const HomePage: React.FC = () => {
   return (
