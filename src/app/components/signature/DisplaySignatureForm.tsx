@@ -1,4 +1,5 @@
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import type { Variants } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 

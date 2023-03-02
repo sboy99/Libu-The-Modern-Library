@@ -2,7 +2,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { ThemeType } from '../../../data/Theme';
+import type { ThemeType } from '../../../data/Theme';
 import { useTheme } from '../../../store';
 import { Actions } from '../../../store/features';
 import { PopButton } from '../../utilities';

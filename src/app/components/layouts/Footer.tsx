@@ -9,7 +9,7 @@ import {
   TwitterIcon,
 } from '../../../assets/icons';
 import { Data } from '../../data';
-import { Sublink } from '../../data/Footer';
+import type { Sublink } from '../../data/Footer';
 import { Component } from '../utilities';
 
 const Footer: React.FC = () => {
