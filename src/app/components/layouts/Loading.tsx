@@ -1,7 +1,8 @@
 import React from 'react';
 // import { Dialog, Transition } from "@headlessui/react";
 import { BoltIcon } from '@heroicons/react/24/solid';
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import type { Variants } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useApi, useLayout } from '../../store';
 import { TypoGrapher } from '../utilities';
 

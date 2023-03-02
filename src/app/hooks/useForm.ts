@@ -1,5 +1,6 @@
-import { FormEvent, useState } from 'react';
-import { AnyZodObject, ZodError } from 'zod';
+import type { FormEvent} from 'react';
+import { useState } from 'react';
+import type { AnyZodObject, ZodError } from 'zod';
 import getStructuredZodError from '../utils/getStructuredZodErrors';
 
 interface IUseForm<T> {

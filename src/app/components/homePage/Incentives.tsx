@@ -1,5 +1,6 @@
 import React from 'react';
-import { IncentativeList, IncentiveType } from '../../data/Incentives';
+import type { IncentiveType } from '../../data/Incentives';
+import { IncentativeList } from '../../data/Incentives';
 import { SafeArea, TypoGrapher } from '../utilities';
 
 const Incentives: React.FC = () => {

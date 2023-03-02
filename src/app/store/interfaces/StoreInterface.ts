@@ -1,6 +1,12 @@
 export type TSignatureOptionType = 'login' | 'register';
 type TUserRole = 'reader' | 'librarian' | 'owner;';
 type TApiResponseType = 'error' | 'warning' | 'success';
+type TAuthState =
+  | 'DEAUTHENTIC'
+  | 'VERIFIED_AUTHENTIC'
+  | 'NOT_VERIFIED'
+  | 'SIGN_IN'
+  | 'LOG_OUT';
 
 export interface IApiResponse<T = unknown> {
   type: TApiResponseType;
@@ -34,6 +40,7 @@ export interface IThemeState {
 }
 
 export interface IUser {
+  authState: TAuthState;
   user: {
     userId: string;
     username: string;
