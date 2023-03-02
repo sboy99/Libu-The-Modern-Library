@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { Loading } from '../components';
 import { useThemeObserver } from '../hooks';
+import useUserAuthentication from '../hooks/useUserAuthentication';
 import { useTheme } from '../store';
 import { Actions } from '../store/features';
 
@@ -13,6 +14,7 @@ type Props = {
 
 const AppWrapper: React.FunctionComponent<Props> = ({ children }) => {
   useThemeObserver();
+  useUserAuthentication();
   const { windowWidth, theme } = useTheme();
   const { pathname } = useLocation();
   const dispatch = useDispatch();
