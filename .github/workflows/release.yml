@@ -1,22 +1,24 @@
-name: 'release'
+name: Releases
 on:
   push:
     branches:
-      - 'main'
+      - main
 
 jobs:
-  release:
+  changelog:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Generate changelog
+      - uses: actions/checkout@v2
+      - name: conventional Changelog Action
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
+        uses: TriPSs/conventional-changelog-action@v3.7.1
         with:
           github-token: ${{ secrets.github_token }}
-          create-summary: true
 
-      - name: Create Release
-        uses: actions/create-release@v1      
+      - name: create release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
