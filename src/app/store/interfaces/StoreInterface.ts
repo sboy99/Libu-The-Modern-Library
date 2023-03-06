@@ -43,7 +43,7 @@ export interface IUser {
   authState: TAuthState;
   user: {
     userId: string;
-    username: string;
+    userName: string;
     role: TUserRole;
   } | null;
   profile: {
