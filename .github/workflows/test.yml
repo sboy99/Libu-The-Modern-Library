@@ -1,13 +1,11 @@
-name: Release
+name: Test
 on:
-  workflow-dispatch:
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  release:
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,6 +13,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g yarn
+      - run: yarn lint
       - run: yarn build
       - run: npx semantic-release
         env:
