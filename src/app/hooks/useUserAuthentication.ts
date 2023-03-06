@@ -9,7 +9,11 @@ const useUserAuthentication = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (authState !== 'VERIFIED_AUTHENTIC' && authState !== 'NOT_VERIFIED') {
+    if (
+      authState !== 'VERIFIED_AUTHENTIC' &&
+      authState !== 'NOT_VERIFIED' &&
+      authState !== 'LOG_OUT'
+    ) {
       dispatch(getUser() as any);
     }
   }, [authState]);

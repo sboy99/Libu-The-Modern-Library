@@ -46,6 +46,25 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const logoutUser = createAsyncThunk(
+  'auth/logout',
+  async (_, { dispatch }) => {
+    dispatch(Actions.startFormLoading());
+    try {
+      const { data } = await axios.get('/auth/logout');
+      dispatch(Actions.setApiResponse(data));
+      return data as IApiResponse;
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        dispatch(Actions.setApiResponse(error.response?.data));
+        throw error.response?.data;
+      }
+    } finally {
+      dispatch(Actions.stopFormLoading());
+    }
+  }
+);
+
 export const getUser = createAsyncThunk(
   'users/get-user',
   async (_, { dispatch }) => {

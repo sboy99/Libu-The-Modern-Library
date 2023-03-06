@@ -1,3 +1,5 @@
+import { useUser } from '@/app/store';
+import { logoutUser } from '@/app/store/api/authentication';
 import { UserCircleIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -5,8 +7,8 @@ import { Actions } from '../../../store/features';
 import { PopButton } from '../../utilities';
 
 const UserInfo: React.FC = (): JSX.Element => {
+  const { user } = useUser();
   const dispatch = useDispatch();
-  const [userLoggedIn, setUserLoggedIn] = React.useState(false);
 
   const openLoginForm = () => {
     dispatch(Actions.setSignatureOption('login'));
@@ -16,8 +18,40 @@ const UserInfo: React.FC = (): JSX.Element => {
     dispatch(Actions.setSignatureOption('register'));
     dispatch(Actions.openSignForm());
   };
+  const handleLogout = () => {
+    console.log('triggered');
+    dispatch(logoutUser() as any);
+    console.log('triggered again');
+  };
 
-  if (userLoggedIn) return <div className="">UserLoggedIn</div>;
+  if (user && user?.userId)
+    return (
+      <div className="mt-4 flex flex-col gap-y-4 px-2">
+        {/* user profile */}
+        <div className="flex gap-2">
+          {/* avatar */}
+          <div className="flex items-center justify-start">
+            <UserCircleIcon className="h-16 w-16 text-skin-muted" />
+          </div>
+          {/* username */}
+          <div className="-space-y-1">
+            <h2 className="text-2xl font-bold capitalize text-skin-base">
+              {user.userName}
+            </h2>
+            <span className="rounded-md bg-skin-muted px-2 py-1 text-xs font-semibold text-skin-base">
+              {user.role}
+            </span>
+          </div>
+        </div>
+        {/* logout */}
+        <PopButton
+          onClick={handleLogout}
+          className="bg-btn-accent text-skin-inverted"
+        >
+          Log Out
+        </PopButton>
+      </div>
+    );
 
   return (
     <div className="flex flex-col gap-4 py-2 px-1">
