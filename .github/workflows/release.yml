@@ -1,6 +1,7 @@
 name: Release
+
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   release:
@@ -19,4 +20,4 @@ jobs:
       - run: yarn build
       - run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
