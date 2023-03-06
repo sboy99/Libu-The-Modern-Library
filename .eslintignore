@@ -1,4 +1,3 @@
 node_modules
 dist
-tailwind.config.cjs
-release.config.cjs
+*.config.cjs
