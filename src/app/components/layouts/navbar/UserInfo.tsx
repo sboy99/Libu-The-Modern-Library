@@ -19,9 +19,7 @@ const UserInfo: React.FC = (): JSX.Element => {
     dispatch(Actions.openSignForm());
   };
   const handleLogout = () => {
-    console.log('triggered');
     dispatch(logoutUser() as any);
-    console.log('triggered again');
   };
 
   if (user && user?.userId)
