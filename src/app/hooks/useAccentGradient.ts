@@ -1,6 +1,5 @@
-import React from "react";
-import { useTheme } from "../store";
-import colors from "tailwindcss/colors";
+import colors from 'tailwindcss/colors';
+import { useTheme } from '../store';
 
 interface accentGrad {
   from: string;
