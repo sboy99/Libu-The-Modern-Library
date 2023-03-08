@@ -1,5 +1,5 @@
 export type TSignatureOptionType = 'login' | 'register';
-type TUserRole = 'reader' | 'librarian' | 'owner;';
+export type TUserRole = 'reader' | 'librarian' | 'owner';
 type TApiResponseType = 'error' | 'warning' | 'success';
 type TAuthState =
   | 'DEAUTHENTIC'

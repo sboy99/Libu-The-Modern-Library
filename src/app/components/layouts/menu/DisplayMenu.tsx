@@ -1,14 +1,18 @@
-import React from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { useLayout, useTheme } from "../../../store";
-import { Menu } from "../..";
-import { useDispatch } from "react-redux";
-import { Actions } from "../../../store/features";
+import { Dialog, Transition } from '@headlessui/react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { Menu } from '../..';
+import { useLayout, useTheme } from '../../../store';
+import { Actions } from '../../../store/features';
+import Sidebar from '../../libraryControlPage/layout/Sidebar';
 
 const DisplayMenu: React.FC = () => {
+  const { pathname } = useLocation();
   const { theme } = useTheme();
   const { isMenuOpen } = useLayout();
   const dispatch = useDispatch();
+  const isAdminPage = pathname.startsWith('/control-panel');
 
   function closeMenu(): void {
     dispatch(Actions.closeMenu());
@@ -42,7 +46,7 @@ const DisplayMenu: React.FC = () => {
           <Dialog.Panel
             className={`fixed inset-0 mt-16 h-fit max-w-[16rem] sm:mt-20`}
           >
-            <Menu />
+            {isAdminPage ? <Sidebar /> : <Menu />}
           </Dialog.Panel>
         </Transition.Child>
       </Dialog>
