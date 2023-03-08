@@ -15,7 +15,7 @@ const Layout: React.FC = (): JSX.Element => {
 
   //  don't set overflow here
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-skin-base">
       <div className="z-10">
         <Navbar />
         <SearchBox />

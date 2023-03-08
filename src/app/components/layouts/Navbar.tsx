@@ -1,10 +1,15 @@
 import { Bars2Icon, StarIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { PaintBrushIcon, UserCircleIcon } from '@heroicons/react/24/solid';
+import {
+  BuildingLibraryIcon,
+  HomeModernIcon,
+  PaintBrushIcon,
+  UserCircleIcon,
+} from '@heroicons/react/24/solid';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { useLayout, useTheme } from '../../store';
+import { useLayout, useTheme, useUser } from '../../store';
 import { Actions } from '../../store/features';
 import { Container, Glow, Pop } from '../utilities';
 import Logo from './navbar/Logo';
@@ -14,10 +19,14 @@ import Themes from './navbar/Themes';
 import UserInfo from './navbar/UserInfo';
 
 const Navbar: React.FC = () => {
+  const { user } = useUser();
   const { pathname } = useLocation();
   const { windowWidth: width } = useTheme();
   const { isMenuOpen } = useLayout();
   const dispatch = useDispatch();
+  const isPriviledgedUser =
+    user?.role && ['librarian', 'owner'].includes(user.role);
+  const isAdminPage = pathname.startsWith('/control-panel');
 
   function handleMenu() {
     dispatch(Actions.toggleMenu());
@@ -69,7 +78,16 @@ const Navbar: React.FC = () => {
             </a>
           </div>
           {/* separator */}
-          <div className="flex items-center gap-2 px-2 sm:gap-4 sm:px-4">
+          <div className="flex items-center px-2 sm:gap-4 sm:px-4">
+            {/* admin page */}
+            {isPriviledgedUser && (
+              <Link
+                to={isAdminPage ? '/' : '/control-panel'}
+                className="h-8 w-8 rounded-full p-1 text-skin-base hover:bg-skin-inverted hover:text-skin-inverted sm:h-9 sm:w-9"
+              >
+                {isAdminPage ? <HomeModernIcon /> : <BuildingLibraryIcon />}
+              </Link>
+            )}
             {/* Multi theme select */}
             {/* {<ToggleTheme />} */}
             <Pop
